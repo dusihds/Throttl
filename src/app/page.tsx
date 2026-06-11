@@ -42,14 +42,20 @@ export default async function Home() {
       />
 
       {/* ── Section divider ──────────────────────────────────── */}
-      <div className="h-px w-full" style={{ background: 'linear-gradient(90deg,transparent,rgba(255,255,255,0.06),transparent)' }} />
+      <div className="glow-divider w-full" />
 
       {/* ── Recent Spots ─────────────────────────────────────── */}
       {spots && spots.length > 0 && (
         <section className="py-16 md:py-20">
           <div className="flex items-end justify-between mb-8">
             <div>
-              <p className="text-[11px] font-mono text-[#F97316] uppercase tracking-widest mb-2">Community</p>
+              <div className="flex items-center gap-2 mb-2">
+                <span className="relative flex h-2 w-2">
+                  <span className="ping-orange absolute inline-flex h-full w-full rounded-full bg-[#F97316] opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#F97316]" />
+                </span>
+                <p className="text-[11px] font-mono text-[#F97316] uppercase tracking-widest">Community</p>
+              </div>
               <h2 className="text-2xl md:text-3xl font-bold text-[#F5F0EB] tracking-tight flex items-center gap-2">
                 <Car className="w-6 h-6 text-[#F97316]" />
                 Recent Spots
@@ -72,7 +78,7 @@ export default async function Home() {
 
       {/* ── Section divider ──────────────────────────────────── */}
       {spots && spots.length > 0 && enrichedEvents.length > 0 && (
-        <div className="h-px w-full" style={{ background: 'linear-gradient(90deg,transparent,rgba(255,255,255,0.06),transparent)' }} />
+        <div className="glow-divider w-full" />
       )}
 
       {/* ── Upcoming Events ───────────────────────────────────── */}
@@ -80,7 +86,13 @@ export default async function Home() {
         <section className="py-16 md:py-20">
           <div className="flex items-end justify-between mb-8">
             <div>
-              <p className="text-[11px] font-mono text-[#F97316] uppercase tracking-widest mb-2">Meetups</p>
+              <div className="flex items-center gap-2 mb-2">
+                <span className="relative flex h-2 w-2">
+                  <span className="ping-orange absolute inline-flex h-full w-full rounded-full bg-[#F97316] opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#F97316]" />
+                </span>
+                <p className="text-[11px] font-mono text-[#F97316] uppercase tracking-widest">Meetups</p>
+              </div>
               <h2 className="text-2xl md:text-3xl font-bold text-[#F5F0EB] tracking-tight flex items-center gap-2">
                 <Calendar className="w-6 h-6 text-[#F97316]" />
                 Upcoming Events

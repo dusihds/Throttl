@@ -113,10 +113,11 @@ main > div { animation: page-enter 0.45s var(--ease-expo) both; }
   will-change: transform;
 }
 .card:hover {
-  border-color: rgba(249,115,22,0.18);
-  box-shadow: 0 0 0 1px rgba(249,115,22,0.08),
-              0 8px 32px rgba(0,0,0,0.6),
-              0 0 60px rgba(249,115,22,0.06);
+  border-color: rgba(249,115,22,0.28);
+  box-shadow: 0 0 0 1px rgba(249,115,22,0.10),
+              0 8px 40px rgba(0,0,0,0.65),
+              0 0 80px rgba(249,115,22,0.09);
+  transform: translateY(-2px);
 }
 .card:active { transform: translateY(-1px); }
 
@@ -177,6 +178,25 @@ main > div { animation: page-enter 0.45s var(--ease-expo) both; }
 }
 .btn-secondary:active  { transform: scale(0.975); }
 .btn-secondary:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* ─── Animated section divider ──────────────────────────────────────── */
+@keyframes glow-line {
+  0%,100% { opacity: 0.4; }
+  50%      { opacity: 1; }
+}
+.glow-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #F97316, transparent);
+  animation: glow-line 3s ease-in-out infinite;
+}
+
+/* ─── Pulse ring (for live / active indicators) ─────────────────────── */
+@keyframes ping-orange {
+  75%, 100% { transform: scale(2); opacity: 0; }
+}
+.ping-orange {
+  animation: ping-orange 1.4s cubic-bezier(0,0,0.2,1) infinite;
+}
 
 /* ─── Body ───────────────────────────────────────────────────────────── */
 body {
