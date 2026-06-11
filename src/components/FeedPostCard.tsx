@@ -160,23 +160,23 @@ export default function FeedPostCard({ post, currentUserId, index = 0 }: Props) 
       <div className="flex items-center gap-2.5 mb-3">
         <div
           className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold shrink-0"
-          style={{ background: 'rgba(94,106,210,0.18)', color: '#818cf8', border: '1px solid rgba(94,106,210,0.28)' }}
+          style={{ background: 'rgba(249,115,22,0.18)', color: '#FB923C', border: '1px solid rgba(249,115,22,0.28)' }}
         >
           {post.profiles?.username?.[0]?.toUpperCase() ?? '?'}
         </div>
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-1.5 flex-wrap">
-            <a href={`/profile/${post.profiles?.username ?? ''}`} className="text-sm font-semibold text-[#EDEDEF] hover:text-[#818cf8] transition-colors">@{post.profiles?.username ?? 'unknown'}</a>
+            <a href={`/profile/${post.profiles?.username ?? ''}`} className="text-sm font-semibold text-[#F5F0EB] hover:text-[#FB923C] transition-colors">@{post.profiles?.username ?? 'unknown'}</a>
             {post.profiles?.is_developer && <DevBadge />}
           </div>
-          <span className="text-[11px] font-mono" style={{ color: '#8A8F98' }}>
+          <span className="text-[11px] font-mono" style={{ color: '#8C8680' }}>
             {formatDistanceToNow(new Date(post.created_at), { addSuffix: true })}
           </span>
         </div>
         {post.type === 'poll' && (
           <div
             className="flex items-center gap-1 text-[10px] font-mono px-2.5 py-1 rounded-full shrink-0"
-            style={{ background: 'rgba(94,106,210,0.10)', color: '#818cf8', border: '1px solid rgba(94,106,210,0.22)' }}
+            style={{ background: 'rgba(249,115,22,0.10)', color: '#FB923C', border: '1px solid rgba(249,115,22,0.22)' }}
           >
             <BarChart2 className="w-3 h-3" />
             poll
@@ -185,7 +185,7 @@ export default function FeedPostCard({ post, currentUserId, index = 0 }: Props) 
       </div>
 
       {/* Content */}
-      <p className="text-sm text-[#EDEDEF] leading-relaxed whitespace-pre-wrap break-words mb-3">
+      <p className="text-sm text-[#F5F0EB] leading-relaxed whitespace-pre-wrap break-words mb-3">
         {post.content}
       </p>
 
@@ -207,9 +207,9 @@ export default function FeedPostCard({ post, currentUserId, index = 0 }: Props) 
                   disabled={!canVote}
                   className="relative w-full text-left px-4 py-3 rounded-xl text-sm overflow-hidden transition-all duration-200"
                   style={{
-                    background: isVoted ? 'rgba(94,106,210,0.16)' : hasVoted ? 'rgba(255,255,255,0.03)' : 'rgba(255,255,255,0.04)',
-                    border: isVoted ? '1px solid rgba(94,106,210,0.38)' : '1px solid rgba(255,255,255,0.07)',
-                    color: hasVoted ? (isVoted ? '#818cf8' : '#8A8F98') : '#EDEDEF',
+                    background: isVoted ? 'rgba(249,115,22,0.16)' : hasVoted ? 'rgba(255,255,255,0.03)' : 'rgba(255,255,255,0.04)',
+                    border: isVoted ? '1px solid rgba(249,115,22,0.38)' : '1px solid rgba(255,255,255,0.07)',
+                    color: hasVoted ? (isVoted ? '#FB923C' : '#8C8680') : '#F5F0EB',
                     cursor: canVote ? 'pointer' : 'default',
                   }}
                 >
@@ -218,14 +218,14 @@ export default function FeedPostCard({ post, currentUserId, index = 0 }: Props) 
                       className="absolute inset-y-0 left-0 rounded-xl transition-all duration-500"
                       style={{
                         width: `${pct}%`,
-                        background: isVoted ? 'rgba(94,106,210,0.12)' : 'rgba(255,255,255,0.03)',
+                        background: isVoted ? 'rgba(249,115,22,0.12)' : 'rgba(255,255,255,0.03)',
                       }}
                     />
                   )}
                   <span className="relative z-10 flex items-center justify-between">
                     <span>{option.text}</span>
                     {hasVoted && (
-                      <span className="text-xs font-mono ml-2 shrink-0" style={{ color: isVoted ? '#818cf8' : '#8A8F98' }}>
+                      <span className="text-xs font-mono ml-2 shrink-0" style={{ color: isVoted ? '#FB923C' : '#8C8680' }}>
                         {pct}%
                       </span>
                     )}
@@ -234,12 +234,12 @@ export default function FeedPostCard({ post, currentUserId, index = 0 }: Props) 
               )
             })}
           {hasVoted && (
-            <p className="text-[11px] font-mono text-center" style={{ color: '#8A8F98' }}>
+            <p className="text-[11px] font-mono text-center" style={{ color: '#8C8680' }}>
               {totalVotes} vote{totalVotes !== 1 ? 's' : ''} total
             </p>
           )}
           {!currentUserId && !hasVoted && (
-            <p className="text-[11px] text-center" style={{ color: '#8A8F98' }}>Sign in to vote</p>
+            <p className="text-[11px] text-center" style={{ color: '#8C8680' }}>Sign in to vote</p>
           )}
         </div>
       )}
@@ -270,10 +270,10 @@ export default function FeedPostCard({ post, currentUserId, index = 0 }: Props) 
           className="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg ml-1 transition-all"
           style={{
             background: showReplies ? 'rgba(255,255,255,0.06)' : 'transparent',
-            color: '#8A8F98',
+            color: '#8C8680',
           }}
-          onMouseEnter={e => (e.currentTarget.style.color = '#EDEDEF')}
-          onMouseLeave={e => (e.currentTarget.style.color = '#8A8F98')}
+          onMouseEnter={e => (e.currentTarget.style.color = '#F5F0EB')}
+          onMouseLeave={e => (e.currentTarget.style.color = '#8C8680')}
         >
           <MessageCircle className="w-3.5 h-3.5" />
           <span>{replyCount}</span>
@@ -289,7 +289,7 @@ export default function FeedPostCard({ post, currentUserId, index = 0 }: Props) 
         >
           {repliesLoading ? (
             <div className="flex items-center justify-center py-3">
-              <Loader2 className="w-4 h-4 animate-spin text-[#5E6AD2]" />
+              <Loader2 className="w-4 h-4 animate-spin text-[#F97316]" />
             </div>
           ) : (
             replies.map(reply => (
@@ -302,7 +302,7 @@ export default function FeedPostCard({ post, currentUserId, index = 0 }: Props) 
               <div className="flex items-start gap-2">
                 <div
                   className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold shrink-0 mt-0.5"
-                  style={{ background: 'rgba(94,106,210,0.12)', color: '#818cf8', border: '1px solid rgba(94,106,210,0.22)' }}
+                  style={{ background: 'rgba(249,115,22,0.12)', color: '#FB923C', border: '1px solid rgba(249,115,22,0.22)' }}
                 >
                   ·
                 </div>
@@ -389,19 +389,19 @@ function ReplyCard({ reply, currentUserId }: { reply: FeedReply; currentUserId: 
     <div className="flex gap-2.5 pl-2">
       <div
         className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold shrink-0 mt-0.5"
-        style={{ background: 'rgba(255,255,255,0.05)', color: '#EDEDEF', border: '1px solid rgba(255,255,255,0.08)' }}
+        style={{ background: 'rgba(255,255,255,0.05)', color: '#F5F0EB', border: '1px solid rgba(255,255,255,0.08)' }}
       >
         {reply.profiles?.username?.[0]?.toUpperCase() ?? '?'}
       </div>
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-1.5 flex-wrap mb-0.5">
-          <span className="text-xs font-semibold text-[#EDEDEF]">@{reply.profiles?.username ?? 'unknown'}</span>
+          <span className="text-xs font-semibold text-[#F5F0EB]">@{reply.profiles?.username ?? 'unknown'}</span>
           {reply.profiles?.is_developer && <DevBadge small />}
-          <span className="text-[10px] font-mono" style={{ color: '#8A8F98' }}>
+          <span className="text-[10px] font-mono" style={{ color: '#8C8680' }}>
             {formatDistanceToNow(new Date(reply.created_at), { addSuffix: true })}
           </span>
         </div>
-        <p className="text-xs text-[#EDEDEF] leading-relaxed whitespace-pre-wrap break-words mb-1.5">
+        <p className="text-xs text-[#F5F0EB] leading-relaxed whitespace-pre-wrap break-words mb-1.5">
           {reply.content}
         </p>
         <div className="flex items-center gap-0.5">
@@ -449,13 +449,13 @@ function ReactionBtn({
       className="flex items-center gap-1 rounded-lg transition-all duration-150"
       style={{
         padding: small ? '3px 7px' : '5px 10px',
-        background: active ? 'rgba(94,106,210,0.14)' : 'transparent',
-        color: active ? '#818cf8' : '#8A8F98',
-        border: active ? '1px solid rgba(94,106,210,0.25)' : '1px solid transparent',
+        background: active ? 'rgba(249,115,22,0.14)' : 'transparent',
+        color: active ? '#FB923C' : '#8C8680',
+        border: active ? '1px solid rgba(249,115,22,0.25)' : '1px solid transparent',
         cursor: disabled ? 'default' : 'pointer',
       }}
-      onMouseEnter={e => { if (!disabled && !active) e.currentTarget.style.color = '#EDEDEF' }}
-      onMouseLeave={e => { if (!active) e.currentTarget.style.color = '#8A8F98' }}
+      onMouseEnter={e => { if (!disabled && !active) e.currentTarget.style.color = '#F5F0EB' }}
+      onMouseLeave={e => { if (!active) e.currentTarget.style.color = '#8C8680' }}
     >
       {pending
         ? <Loader2 className={`${small ? 'w-3 h-3' : 'w-3.5 h-3.5'} animate-spin`} />
@@ -472,7 +472,7 @@ function DevBadge({ small }: { small?: boolean }) {
   return (
     <span
       className={`inline-flex items-center font-mono font-bold rounded tracking-widest uppercase ${small ? 'text-[8px] px-1 py-0.5' : 'text-[9px] px-1.5 py-0.5'}`}
-      style={{ background: 'rgba(94,106,210,0.15)', color: '#818cf8', border: '1px solid rgba(94,106,210,0.30)' }}
+      style={{ background: 'rgba(249,115,22,0.15)', color: '#FB923C', border: '1px solid rgba(249,115,22,0.30)' }}
     >
       ⚡ DEV
     </span>

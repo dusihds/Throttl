@@ -60,7 +60,7 @@ export default function AttendButton({ eventId, userId, initialAttending, requir
       <button
         disabled
         className="w-full flex items-center justify-center gap-2.5 py-4 text-base font-semibold rounded-xl opacity-50 cursor-not-allowed"
-        style={{ background: 'rgba(255,255,255,0.05)', color: '#8A8F98', border: '1px solid rgba(255,255,255,0.08)' }}
+        style={{ background: 'rgba(255,255,255,0.05)', color: '#8C8680', border: '1px solid rgba(255,255,255,0.08)' }}
       >
         <Users className="w-5 h-5" />
         Event Full
@@ -76,9 +76,9 @@ export default function AttendButton({ eventId, userId, initialAttending, requir
           disabled={loading}
           className="w-full flex items-center justify-center gap-2.5 py-4 text-base font-semibold rounded-xl transition-all duration-200 disabled:opacity-50"
           style={{
-            background: 'rgba(94,106,210,0.10)',
-            color: '#818cf8',
-            border: '1px solid rgba(94,106,210,0.25)',
+            background: 'rgba(249,115,22,0.10)',
+            color: '#FB923C',
+            border: '1px solid rgba(249,115,22,0.25)',
           }}
           onMouseEnter={e => {
             e.currentTarget.style.background = 'rgba(239,68,68,0.08)'
@@ -86,9 +86,9 @@ export default function AttendButton({ eventId, userId, initialAttending, requir
             e.currentTarget.style.borderColor = 'rgba(239,68,68,0.20)'
           }}
           onMouseLeave={e => {
-            e.currentTarget.style.background = 'rgba(94,106,210,0.10)'
-            e.currentTarget.style.color = '#818cf8'
-            e.currentTarget.style.borderColor = 'rgba(94,106,210,0.25)'
+            e.currentTarget.style.background = 'rgba(249,115,22,0.10)'
+            e.currentTarget.style.color = '#FB923C'
+            e.currentTarget.style.borderColor = 'rgba(249,115,22,0.25)'
           }}
         >
           <CheckCircle className="w-5 h-5" />

@@ -58,15 +58,15 @@ export default function ReviewSection({
         className="rounded-2xl p-5 mt-4"
         style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)' }}
       >
-        <div className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest mb-4" style={{ color: '#8A8F98' }}>
-          <Star className="w-3.5 h-3.5 text-[#5E6AD2]" />
+        <div className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest mb-4" style={{ color: '#8C8680' }}>
+          <Star className="w-3.5 h-3.5 text-[#F97316]" />
           Reviews
         </div>
 
         <div className="flex flex-col gap-3">
           {showOrganiserReviewButton && (
             <div className="flex items-center justify-between gap-4">
-              <p className="text-sm text-[#EDEDEF]">Review the organiser</p>
+              <p className="text-sm text-[#F5F0EB]">Review the organiser</p>
               <button
                 onClick={() => setModal({ revieweeId: organiserProfile!.id, revieweeName: organiserProfile!.username })}
                 className="btn-secondary text-sm py-2 px-4 shrink-0"
@@ -78,7 +78,7 @@ export default function ReviewSection({
 
           {attendeesToReview.map(a => (
             <div key={a.user_id} className="flex items-center justify-between gap-4">
-              <p className="text-sm text-[#EDEDEF]">@{a.profiles?.username}</p>
+              <p className="text-sm text-[#F5F0EB]">@{a.profiles?.username}</p>
               <button
                 onClick={() => setModal({ revieweeId: a.user_id, revieweeName: a.profiles!.username })}
                 className="btn-secondary text-sm py-2 px-4 shrink-0"

@@ -44,25 +44,25 @@ export default function LeaveReviewModal({ eventId, revieweeId, revieweeName, on
         style={{ background: '#111114', border: '1px solid rgba(255,255,255,0.09)' }}
       >
         <div className="flex items-center justify-between">
-          <h2 className="text-base font-bold text-[#EDEDEF] tracking-tight">Review @{revieweeName}</h2>
+          <h2 className="text-base font-bold text-[#F5F0EB] tracking-tight">Review @{revieweeName}</h2>
           <button
             onClick={onClose}
             className="p-1.5 rounded-lg transition-colors"
-            style={{ color: '#8A8F98' }}
-            onMouseEnter={e => (e.currentTarget.style.color = '#EDEDEF')}
-            onMouseLeave={e => (e.currentTarget.style.color = '#8A8F98')}
+            style={{ color: '#8C8680' }}
+            onMouseEnter={e => (e.currentTarget.style.color = '#F5F0EB')}
+            onMouseLeave={e => (e.currentTarget.style.color = '#8C8680')}
           >
             <X className="w-4 h-4" />
           </button>
         </div>
 
         <div className="flex flex-col gap-2">
-          <label className="text-xs font-medium uppercase tracking-wide" style={{ color: '#8A8F98' }}>Rating *</label>
+          <label className="text-xs font-medium uppercase tracking-wide" style={{ color: '#8C8680' }}>Rating *</label>
           <StarRating value={rating} interactive onChange={setRating} size="md" />
         </div>
 
         <div className="flex flex-col gap-2">
-          <label className="text-xs font-medium uppercase tracking-wide" style={{ color: '#8A8F98' }}>Comment (optional)</label>
+          <label className="text-xs font-medium uppercase tracking-wide" style={{ color: '#8C8680' }}>Comment (optional)</label>
           <textarea
             value={comment}
             onChange={e => setComment(e.target.value.slice(0, 200))}
@@ -70,7 +70,7 @@ export default function LeaveReviewModal({ eventId, revieweeId, revieweeName, on
             placeholder="Share your experience…"
             className="input resize-none text-sm"
           />
-          <p className="text-[11px] text-right" style={{ color: comment.length >= 190 ? '#f87171' : '#8A8F98' }}>
+          <p className="text-[11px] text-right" style={{ color: comment.length >= 190 ? '#f87171' : '#8C8680' }}>
             {comment.length}/200
           </p>
         </div>

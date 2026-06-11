@@ -15,7 +15,7 @@ export default function PrivacyPage() {
     <div className="max-w-2xl mx-auto px-4 py-10">
       <Link
         href="/"
-        className="inline-flex items-center gap-2 text-sm mb-8 transition-colors duration-200 text-[#8A8F98] hover:text-[#EDEDEF]"
+        className="inline-flex items-center gap-2 text-sm mb-8 transition-colors duration-200 text-[#8C8680] hover:text-[#F5F0EB]"
       >
         <ArrowLeft className="w-4 h-4" /> Back to Home
       </Link>
@@ -24,14 +24,14 @@ export default function PrivacyPage() {
       <div className="flex items-start gap-4 mb-10">
         <div
           className="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0"
-          style={{ background: 'rgba(94,106,210,0.12)', border: '1px solid rgba(94,106,210,0.25)' }}
+          style={{ background: 'rgba(249,115,22,0.12)', border: '1px solid rgba(249,115,22,0.25)' }}
         >
-          <Shield className="w-6 h-6 text-[#5E6AD2]" />
+          <Shield className="w-6 h-6 text-[#F97316]" />
         </div>
         <div>
-          <p className="text-[11px] font-mono text-[#5E6AD2] uppercase tracking-widest mb-1">Legal</p>
-          <h1 className="text-3xl font-bold text-[#EDEDEF] tracking-tight">Privacy Policy</h1>
-          <p className="text-sm mt-1" style={{ color: '#8A8F98' }}>Last updated: {LAST_UPDATED}</p>
+          <p className="text-[11px] font-mono text-[#F97316] uppercase tracking-widest mb-1">Legal</p>
+          <h1 className="text-3xl font-bold text-[#F5F0EB] tracking-tight">Privacy Policy</h1>
+          <p className="text-sm mt-1" style={{ color: '#8C8680' }}>Last updated: {LAST_UPDATED}</p>
         </div>
       </div>
 
@@ -40,7 +40,7 @@ export default function PrivacyPage() {
           <P>
             Throttl is a community platform for car enthusiasts to log spotted vehicles and organise local meetups.
             The app is operated by an independent developer. For any privacy-related questions, contact us at{' '}
-            <a href={`mailto:${CONTACT_EMAIL}`} className="text-[#5E6AD2] hover:text-[#818cf8] transition-colors underline underline-offset-2">
+            <a href={`mailto:${CONTACT_EMAIL}`} className="text-[#F97316] hover:text-[#FB923C] transition-colors underline underline-offset-2">
               {CONTACT_EMAIL}
             </a>
             .
@@ -49,7 +49,7 @@ export default function PrivacyPage() {
 
         <Section title="2. What Data We Collect">
           <P>We collect only what is necessary to provide the service:</P>
-          <ul className="mt-3 flex flex-col gap-2 text-sm leading-relaxed" style={{ color: '#8A8F98' }}>
+          <ul className="mt-3 flex flex-col gap-2 text-sm leading-relaxed" style={{ color: '#8C8680' }}>
             {[
               ['Account data', 'Email address, hashed password, chosen username, and account creation date.'],
               ['Profile data', 'Username, optional avatar URL, and optional bio.'],
@@ -60,7 +60,7 @@ export default function PrivacyPage() {
               ['Location (geolocation)', 'Only used locally in your browser to filter nearby events. Your coordinates are never transmitted to or stored on our servers.'],
             ].map(([term, desc]) => (
               <li key={term} className="flex gap-3">
-                <span className="text-[#5E6AD2] shrink-0 font-medium" style={{ minWidth: 120 }}>{term}</span>
+                <span className="text-[#F97316] shrink-0 font-medium" style={{ minWidth: 120 }}>{term}</span>
                 <span>{desc}</span>
               </li>
             ))}
@@ -68,7 +68,7 @@ export default function PrivacyPage() {
         </Section>
 
         <Section title="3. How We Use Your Data">
-          <ul className="flex flex-col gap-2 text-sm leading-relaxed" style={{ color: '#8A8F98' }}>
+          <ul className="flex flex-col gap-2 text-sm leading-relaxed" style={{ color: '#8C8680' }}>
             {[
               'To authenticate your account and keep it secure.',
               'To display your spots and events to other community members.',
@@ -77,7 +77,7 @@ export default function PrivacyPage() {
               'We do not sell, rent, or share your personal data with any third party for marketing purposes.',
             ].map(item => (
               <li key={item} className="flex gap-2.5">
-                <span className="text-[#5E6AD2] shrink-0 mt-0.5">—</span>
+                <span className="text-[#F97316] shrink-0 mt-0.5">—</span>
                 {item}
               </li>
             ))}
@@ -104,13 +104,13 @@ export default function PrivacyPage() {
                 className="rounded-xl p-4"
                 style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)' }}
               >
-                <p className="text-sm font-semibold text-[#EDEDEF] mb-1">{name}</p>
-                <p className="text-sm leading-relaxed" style={{ color: '#8A8F98' }}>{desc}</p>
+                <p className="text-sm font-semibold text-[#F5F0EB] mb-1">{name}</p>
+                <p className="text-sm leading-relaxed" style={{ color: '#8C8680' }}>{desc}</p>
                 <a
                   href={link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs text-[#5E6AD2] hover:text-[#818cf8] transition-colors mt-2 inline-block underline underline-offset-2"
+                  className="text-xs text-[#F97316] hover:text-[#FB923C] transition-colors mt-2 inline-block underline underline-offset-2"
                 >
                   View their Privacy Policy →
                 </a>
@@ -122,7 +122,7 @@ export default function PrivacyPage() {
         <Section title="5. Geolocation">
           <P>
             The "Near Me" feature on the Events page requests access to your device's location. We ask for this permission
-            so we can calculate distances between you and car events on your screen only. <strong className="text-[#EDEDEF]">Your coordinates are
+            so we can calculate distances between you and car events on your screen only. <strong className="text-[#F5F0EB]">Your coordinates are
             processed entirely in your browser and are never sent to or stored on our servers.</strong> You can decline
             the permission request at any time; the feature will simply be unavailable.
           </P>
@@ -140,7 +140,7 @@ export default function PrivacyPage() {
           <P>
             Your data is retained for as long as your account exists. If you wish to delete your account and all
             associated data (spots, events, photos), contact us at{' '}
-            <a href={`mailto:${CONTACT_EMAIL}`} className="text-[#5E6AD2] hover:text-[#818cf8] transition-colors underline underline-offset-2">
+            <a href={`mailto:${CONTACT_EMAIL}`} className="text-[#F97316] hover:text-[#FB923C] transition-colors underline underline-offset-2">
               {CONTACT_EMAIL}
             </a>
             {' '}and we will process your request within 14 days.
@@ -149,7 +149,7 @@ export default function PrivacyPage() {
 
         <Section title="8. Your Rights">
           <P>Depending on your jurisdiction, you may have the right to:</P>
-          <ul className="mt-3 flex flex-col gap-2 text-sm leading-relaxed" style={{ color: '#8A8F98' }}>
+          <ul className="mt-3 flex flex-col gap-2 text-sm leading-relaxed" style={{ color: '#8C8680' }}>
             {[
               'Access the personal data we hold about you.',
               'Request correction of inaccurate data.',
@@ -158,13 +158,13 @@ export default function PrivacyPage() {
               'Withdraw consent at any time (where processing is based on consent).',
             ].map(item => (
               <li key={item} className="flex gap-2.5">
-                <span className="text-[#5E6AD2] shrink-0 mt-0.5">—</span>
+                <span className="text-[#F97316] shrink-0 mt-0.5">—</span>
                 {item}
               </li>
             ))}
           </ul>
           <P>To exercise any of these rights, email us at{' '}
-            <a href={`mailto:${CONTACT_EMAIL}`} className="text-[#5E6AD2] hover:text-[#818cf8] transition-colors underline underline-offset-2">
+            <a href={`mailto:${CONTACT_EMAIL}`} className="text-[#F97316] hover:text-[#FB923C] transition-colors underline underline-offset-2">
               {CONTACT_EMAIL}
             </a>.
           </P>
@@ -187,7 +187,7 @@ export default function PrivacyPage() {
         <Section title="11. Contact">
           <P>
             For any questions about this Privacy Policy or your data, contact the developer at{' '}
-            <a href={`mailto:${CONTACT_EMAIL}`} className="text-[#5E6AD2] hover:text-[#818cf8] transition-colors underline underline-offset-2">
+            <a href={`mailto:${CONTACT_EMAIL}`} className="text-[#F97316] hover:text-[#FB923C] transition-colors underline underline-offset-2">
               {CONTACT_EMAIL}
             </a>.
           </P>
@@ -200,7 +200,7 @@ export default function PrivacyPage() {
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <section>
-      <h2 className="text-base font-semibold text-[#EDEDEF] mb-3 tracking-tight">{title}</h2>
+      <h2 className="text-base font-semibold text-[#F5F0EB] mb-3 tracking-tight">{title}</h2>
       <div
         className="rounded-2xl p-5"
         style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)' }}
@@ -212,5 +212,5 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 }
 
 function P({ children }: { children: React.ReactNode }) {
-  return <p className="text-sm leading-relaxed" style={{ color: '#8A8F98' }}>{children}</p>
+  return <p className="text-sm leading-relaxed" style={{ color: '#8C8680' }}>{children}</p>
 }

@@ -46,20 +46,20 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
   return (
     <div className="max-w-3xl mx-auto px-4 py-10">
       <div className="mb-8">
-        <p className="text-[11px] font-mono text-[#5E6AD2] uppercase tracking-widest mb-2">Community</p>
-        <h1 className="text-3xl font-bold text-[#EDEDEF] tracking-tight flex items-center gap-2 mb-6">
-          <Search className="w-7 h-7 text-[#5E6AD2]" />
+        <p className="text-[11px] font-mono text-[#F97316] uppercase tracking-widest mb-2">Community</p>
+        <h1 className="text-3xl font-bold text-[#F5F0EB] tracking-tight flex items-center gap-2 mb-6">
+          <Search className="w-7 h-7 text-[#F97316]" />
           Find People
         </h1>
         <SearchInput initialQuery={query} />
       </div>
 
       {query.length === 0 && (
-        <p className="text-sm text-center py-16" style={{ color: '#8A8F98' }}>Start typing to search profiles</p>
+        <p className="text-sm text-center py-16" style={{ color: '#8C8680' }}>Start typing to search profiles</p>
       )}
 
       {query.length > 0 && profiles.length === 0 && (
-        <p className="text-sm text-center py-16" style={{ color: '#8A8F98' }}>No profiles found for &quot;{query}&quot;</p>
+        <p className="text-sm text-center py-16" style={{ color: '#8C8680' }}>No profiles found for &quot;{query}&quot;</p>
       )}
 
       {profiles.length > 0 && (
@@ -72,17 +72,17 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
               <Link
                 key={profile.id}
                 href={`/profile/${profile.username}`}
-                className="card p-4 flex items-center gap-4 group hover:border-[rgba(94,106,210,0.25)] transition-all"
+                className="card p-4 flex items-center gap-4 group hover:border-[rgba(249,115,22,0.25)] transition-all"
               >
                 <Avatar username={profile.username} avatarUrl={profile.avatar_url} size="md" isDev={isDev} />
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-1.5 flex-wrap">
-                    <span className="text-sm font-semibold text-[#EDEDEF] group-hover:text-white transition-colors">
+                    <span className="text-sm font-semibold text-[#F5F0EB] group-hover:text-white transition-colors">
                       @{profile.username}
                     </span>
                     {isDev && (
                       <span className="text-[9px] font-mono font-bold px-1.5 py-0.5 rounded-full tracking-widest"
-                        style={{ background: 'rgba(94,106,210,0.15)', color: '#818cf8' }}>
+                        style={{ background: 'rgba(249,115,22,0.15)', color: '#FB923C' }}>
                         DEV
                       </span>
                     )}
@@ -94,7 +94,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
                     )}
                   </div>
                   {profile.bio && (
-                    <p className="text-xs mt-0.5 truncate" style={{ color: '#8A8F98' }}>{profile.bio}</p>
+                    <p className="text-xs mt-0.5 truncate" style={{ color: '#8C8680' }}>{profile.bio}</p>
                   )}
                   <div className="mt-1.5">
                     {isDev ? (
@@ -102,11 +102,11 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
                     ) : avgRating !== null ? (
                       <div className="flex items-center gap-1.5">
                         <StarRating value={avgRating} size="xs" />
-                        <span className="text-[11px] font-mono text-[#EDEDEF]">{avgRating.toFixed(1)}</span>
-                        <span className="text-[10px] font-mono" style={{ color: '#8A8F98' }}>({stats!.count})</span>
+                        <span className="text-[11px] font-mono text-[#F5F0EB]">{avgRating.toFixed(1)}</span>
+                        <span className="text-[10px] font-mono" style={{ color: '#8C8680' }}>({stats!.count})</span>
                       </div>
                     ) : (
-                      <span className="text-[11px] font-mono" style={{ color: '#8A8F98' }}>No reviews yet</span>
+                      <span className="text-[11px] font-mono" style={{ color: '#8C8680' }}>No reviews yet</span>
                     )}
                   </div>
                 </div>

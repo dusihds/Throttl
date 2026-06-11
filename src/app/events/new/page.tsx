@@ -152,12 +152,12 @@ export default function NewEventPage() {
       <div className="text-center max-w-sm">
         <div
           className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6"
-          style={{ background: 'rgba(94,106,210,0.12)', border: '1px solid rgba(94,106,210,0.25)' }}
+          style={{ background: 'rgba(249,115,22,0.12)', border: '1px solid rgba(249,115,22,0.25)' }}
         >
-          <Lock className="w-8 h-8 text-[#5E6AD2]" />
+          <Lock className="w-8 h-8 text-[#F97316]" />
         </div>
-        <h2 className="text-2xl font-bold text-[#EDEDEF] tracking-tight mb-2">Sign in to create events</h2>
-        <p className="text-sm mb-8" style={{ color: '#8A8F98' }}>To add events you need to sign in first.</p>
+        <h2 className="text-2xl font-bold text-[#F5F0EB] tracking-tight mb-2">Sign in to create events</h2>
+        <p className="text-sm mb-8" style={{ color: '#8C8680' }}>To add events you need to sign in first.</p>
         <Link href="/auth" className="btn-primary px-8 py-3">
           <Calendar className="w-4 h-4" />
           Sign In
@@ -168,27 +168,27 @@ export default function NewEventPage() {
 
   return (
     <div className="max-w-xl mx-auto px-4 py-10">
-      <Link href="/events" className="inline-flex items-center gap-2 text-sm mb-8 transition-colors duration-200" style={{ color: '#8A8F98' }}
-        onMouseEnter={e => (e.currentTarget.style.color = '#EDEDEF')}
-        onMouseLeave={e => (e.currentTarget.style.color = '#8A8F98')}
+      <Link href="/events" className="inline-flex items-center gap-2 text-sm mb-8 transition-colors duration-200" style={{ color: '#8C8680' }}
+        onMouseEnter={e => (e.currentTarget.style.color = '#F5F0EB')}
+        onMouseLeave={e => (e.currentTarget.style.color = '#8C8680')}
       >
         <ArrowLeft className="w-4 h-4" /> Back to Events
       </Link>
 
-      <p className="text-[11px] font-mono text-[#5E6AD2] uppercase tracking-widest mb-2">New event</p>
-      <h1 className="text-3xl font-bold text-[#EDEDEF] tracking-tight mb-1">Create Event</h1>
-      <p className="text-sm mb-8" style={{ color: '#8A8F98' }}>Organise a meetup, show, or cruise for the community.</p>
+      <p className="text-[11px] font-mono text-[#F97316] uppercase tracking-widest mb-2">New event</p>
+      <h1 className="text-3xl font-bold text-[#F5F0EB] tracking-tight mb-1">Create Event</h1>
+      <p className="text-sm mb-8" style={{ color: '#8C8680' }}>Organise a meetup, show, or cruise for the community.</p>
 
       <form onSubmit={handleSubmit} className="flex flex-col gap-6">
 
         {/* Cover image */}
         <div>
-          <label className="block text-xs font-medium uppercase tracking-wide mb-2" style={{ color: '#8A8F98' }}>Cover Image</label>
+          <label className="block text-xs font-medium uppercase tracking-wide mb-2" style={{ color: '#8C8680' }}>Cover Image</label>
           {coverPreview ? (
             <div className="relative aspect-video rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
               <img src={coverPreview} alt="preview" className="w-full h-full object-cover" />
               <button type="button" onClick={() => { setCoverFile(null); setCoverPreview(null) }}
-                className="absolute top-3 right-3 p-1.5 rounded-full" style={{ background: 'rgba(5,5,6,0.80)', color: '#EDEDEF' }}>
+                className="absolute top-3 right-3 p-1.5 rounded-full" style={{ background: 'rgba(5,5,6,0.80)', color: '#F5F0EB' }}>
                 <X className="w-4 h-4" />
               </button>
             </div>
@@ -202,12 +202,12 @@ export default function NewEventPage() {
               onDrop={onDrop}
               className="w-full aspect-video rounded-2xl flex flex-col items-center justify-center gap-3 transition-all duration-200"
               style={{
-                background: dragging ? 'rgba(94,106,210,0.08)' : 'rgba(255,255,255,0.03)',
-                border: `2px dashed ${dragging ? 'rgba(94,106,210,0.60)' : 'rgba(255,255,255,0.08)'}`,
+                background: dragging ? 'rgba(249,115,22,0.08)' : 'rgba(255,255,255,0.03)',
+                border: `2px dashed ${dragging ? 'rgba(249,115,22,0.60)' : 'rgba(255,255,255,0.08)'}`,
               }}
             >
-              <Camera className="w-7 h-7 transition-colors" style={{ color: dragging ? '#818cf8' : '#8A8F98' }} />
-              <span className="text-sm transition-colors" style={{ color: dragging ? '#818cf8' : '#8A8F98' }}>
+              <Camera className="w-7 h-7 transition-colors" style={{ color: dragging ? '#FB923C' : '#8C8680' }} />
+              <span className="text-sm transition-colors" style={{ color: dragging ? '#FB923C' : '#8C8680' }}>
                 {dragging ? 'Drop to upload' : 'Click or drag an image here'}
               </span>
             </button>
@@ -217,25 +217,25 @@ export default function NewEventPage() {
 
         {/* Title */}
         <div>
-          <label className="block text-xs font-medium uppercase tracking-wide mb-1.5" style={{ color: '#8A8F98' }}>Event Title *</label>
+          <label className="block text-xs font-medium uppercase tracking-wide mb-1.5" style={{ color: '#8C8680' }}>Event Title *</label>
           <input value={form.title} onChange={e => set('title', e.target.value)} required placeholder="Sunday Morning Cruise" className="input" />
         </div>
 
         {/* Description */}
         <div>
-          <label className="block text-xs font-medium uppercase tracking-wide mb-1.5" style={{ color: '#8A8F98' }}>Description</label>
+          <label className="block text-xs font-medium uppercase tracking-wide mb-1.5" style={{ color: '#8C8680' }}>Description</label>
           <textarea value={form.description} onChange={e => set('description', e.target.value)} rows={3}
             placeholder="All makes welcome. Meet at the car park…" className="input resize-none" />
         </div>
 
         {/* Location */}
         <div>
-          <label className="block text-xs font-medium uppercase tracking-wide mb-1.5" style={{ color: '#8A8F98' }}>
-            <span className="inline-flex items-center gap-1.5"><MapPin className="w-3 h-3 text-[#5E6AD2]" /> Location *</span>
+          <label className="block text-xs font-medium uppercase tracking-wide mb-1.5" style={{ color: '#8C8680' }}>
+            <span className="inline-flex items-center gap-1.5"><MapPin className="w-3 h-3 text-[#F97316]" /> Location *</span>
           </label>
           <input value={form.location_name} onChange={e => set('location_name', e.target.value)} required
             placeholder="Sunset Strip Car Park, Los Angeles" className="input" />
-          <p className="text-[11px] mt-1.5" style={{ color: '#8A8F98' }}>
+          <p className="text-[11px] mt-1.5" style={{ color: '#8C8680' }}>
             Enter a specific address or place name — we'll geocode it so others can filter by distance.
           </p>
         </div>
@@ -243,7 +243,7 @@ export default function NewEventPage() {
         {/* Start + End */}
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <label className="block text-xs font-medium uppercase tracking-wide mb-1.5" style={{ color: '#8A8F98' }}>
+            <label className="block text-xs font-medium uppercase tracking-wide mb-1.5" style={{ color: '#8C8680' }}>
               {isRecurring ? 'Start Time *' : 'Start *'}
             </label>
             {isRecurring ? (
@@ -253,7 +253,7 @@ export default function NewEventPage() {
             )}
           </div>
           <div>
-            <label className="block text-xs font-medium uppercase tracking-wide mb-1.5" style={{ color: '#8A8F98' }}>End (optional)</label>
+            <label className="block text-xs font-medium uppercase tracking-wide mb-1.5" style={{ color: '#8C8680' }}>End (optional)</label>
             {isRecurring ? (
               <input type="time" value={recurringEndTime} onChange={e => setRecurringEndTime(e.target.value)} className="input text-sm" />
             ) : (
@@ -266,17 +266,17 @@ export default function NewEventPage() {
         <div className="rounded-2xl p-5" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)' }}>
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: 'rgba(94,106,210,0.12)', border: '1px solid rgba(94,106,210,0.20)' }}>
-                <RefreshCw className="w-4 h-4 text-[#5E6AD2]" />
+              <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: 'rgba(249,115,22,0.12)', border: '1px solid rgba(249,115,22,0.20)' }}>
+                <RefreshCw className="w-4 h-4 text-[#F97316]" />
               </div>
               <div>
-                <p className="text-sm font-semibold text-[#EDEDEF]">Recurring Event</p>
-                <p className="text-xs" style={{ color: '#8A8F98' }}>Repeats on a schedule</p>
+                <p className="text-sm font-semibold text-[#F5F0EB]">Recurring Event</p>
+                <p className="text-xs" style={{ color: '#8C8680' }}>Repeats on a schedule</p>
               </div>
             </div>
             <button type="button" onClick={() => setIsRecurring(r => !r)}
               className="w-12 h-6 rounded-full relative transition-colors duration-200 shrink-0"
-              style={{ background: isRecurring ? '#5E6AD2' : 'rgba(255,255,255,0.10)' }}
+              style={{ background: isRecurring ? '#F97316' : 'rgba(255,255,255,0.10)' }}
             >
               <span className="absolute top-1 w-4 h-4 bg-white rounded-full shadow transition-all duration-200"
                 style={{ left: isRecurring ? '28px' : '4px' }} />
@@ -286,15 +286,15 @@ export default function NewEventPage() {
           {isRecurring && (
             <div className="mt-5 pt-5 flex flex-col gap-4" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
               <div>
-                <label className="block text-xs font-medium uppercase tracking-wide mb-2" style={{ color: '#8A8F98' }}>Frequency</label>
+                <label className="block text-xs font-medium uppercase tracking-wide mb-2" style={{ color: '#8C8680' }}>Frequency</label>
                 <div className="flex gap-2">
                   {(['DAILY', 'WEEKLY', 'MONTHLY'] as const).map(f => (
                     <button key={f} type="button" onClick={() => setFreq(f)}
                       className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
                       style={{
-                        background: freq === f ? 'rgba(94,106,210,0.20)' : 'rgba(255,255,255,0.05)',
-                        color: freq === f ? '#818cf8' : '#8A8F98',
-                        border: freq === f ? '1px solid rgba(94,106,210,0.30)' : '1px solid rgba(255,255,255,0.06)',
+                        background: freq === f ? 'rgba(249,115,22,0.20)' : 'rgba(255,255,255,0.05)',
+                        color: freq === f ? '#FB923C' : '#8C8680',
+                        border: freq === f ? '1px solid rgba(249,115,22,0.30)' : '1px solid rgba(255,255,255,0.06)',
                       }}
                     >
                       {f.charAt(0) + f.slice(1).toLowerCase()}
@@ -305,15 +305,15 @@ export default function NewEventPage() {
 
               {freq === 'WEEKLY' && (
                 <div>
-                  <label className="block text-xs font-medium uppercase tracking-wide mb-2" style={{ color: '#8A8F98' }}>Day(s) *</label>
+                  <label className="block text-xs font-medium uppercase tracking-wide mb-2" style={{ color: '#8C8680' }}>Day(s) *</label>
                   <div className="flex gap-2 flex-wrap">
                     {DAYS.map(({ label, value }) => (
                       <button key={value} type="button" onClick={() => toggleDay(value)}
                         className="w-12 h-12 rounded-xl text-sm font-semibold transition-all duration-200"
                         style={{
-                          background: selectedDays.includes(value) ? 'rgba(94,106,210,0.20)' : 'rgba(255,255,255,0.04)',
-                          color: selectedDays.includes(value) ? '#818cf8' : '#8A8F98',
-                          border: selectedDays.includes(value) ? '1px solid rgba(94,106,210,0.35)' : '1px solid rgba(255,255,255,0.06)',
+                          background: selectedDays.includes(value) ? 'rgba(249,115,22,0.20)' : 'rgba(255,255,255,0.04)',
+                          color: selectedDays.includes(value) ? '#FB923C' : '#8C8680',
+                          border: selectedDays.includes(value) ? '1px solid rgba(249,115,22,0.35)' : '1px solid rgba(255,255,255,0.06)',
                         }}
                       >
                         {label}
@@ -321,7 +321,7 @@ export default function NewEventPage() {
                     ))}
                   </div>
                   {selectedDays.length > 0 && (
-                    <p className="text-[11px] font-mono text-[#5E6AD2] mt-2">
+                    <p className="text-[11px] font-mono text-[#F97316] mt-2">
                       Every {selectedDays.map(d => DAYS.find(x => x.value === d)?.label).join(', ')}
                     </p>
                   )}
@@ -333,20 +333,20 @@ export default function NewEventPage() {
 
         {/* Organiser contact */}
         <div>
-          <label className="block text-xs font-medium uppercase tracking-wide mb-1.5" style={{ color: '#8A8F98' }}>
-            <span className="inline-flex items-center gap-1.5"><Mail className="w-3 h-3 text-[#5E6AD2]" /> Organiser Contact (optional)</span>
+          <label className="block text-xs font-medium uppercase tracking-wide mb-1.5" style={{ color: '#8C8680' }}>
+            <span className="inline-flex items-center gap-1.5"><Mail className="w-3 h-3 text-[#F97316]" /> Organiser Contact (optional)</span>
           </label>
           <input value={form.organizer_contact} onChange={e => set('organizer_contact', e.target.value)}
             placeholder="@throttl_username or email" className="input" />
-          <p className="text-[11px] mt-1.5" style={{ color: '#8A8F98' }}>
+          <p className="text-[11px] mt-1.5" style={{ color: '#8C8680' }}>
             Shown to attendees so they can reach you about the event.
           </p>
         </div>
 
         {/* Capacity */}
         <div>
-          <label className="block text-xs font-medium uppercase tracking-wide mb-1.5" style={{ color: '#8A8F98' }}>
-            <span className="inline-flex items-center gap-1.5"><Users className="w-3 h-3 text-[#5E6AD2]" /> Max Cars (optional)</span>
+          <label className="block text-xs font-medium uppercase tracking-wide mb-1.5" style={{ color: '#8C8680' }}>
+            <span className="inline-flex items-center gap-1.5"><Users className="w-3 h-3 text-[#F97316]" /> Max Cars (optional)</span>
           </label>
           <input
             type="number"
@@ -360,8 +360,8 @@ export default function NewEventPage() {
 
         {/* Minimum rating */}
         <div>
-          <label className="block text-xs font-medium uppercase tracking-wide mb-1.5" style={{ color: '#8A8F98' }}>
-            <span className="inline-flex items-center gap-1.5"><Star className="w-3 h-3 text-[#5E6AD2]" /> Minimum Attendee Rating (optional)</span>
+          <label className="block text-xs font-medium uppercase tracking-wide mb-1.5" style={{ color: '#8C8680' }}>
+            <span className="inline-flex items-center gap-1.5"><Star className="w-3 h-3 text-[#F97316]" /> Minimum Attendee Rating (optional)</span>
           </label>
           <input
             type="number"
@@ -373,7 +373,7 @@ export default function NewEventPage() {
             placeholder="e.g. 3.5 — shown as a recommendation"
             className="input"
           />
-          <p className="text-[11px] mt-1.5" style={{ color: '#8A8F98' }}>
+          <p className="text-[11px] mt-1.5" style={{ color: '#8C8680' }}>
             Attendees below this rating will see a warning but are not hard-blocked.
           </p>
         </div>
@@ -386,15 +386,15 @@ export default function NewEventPage() {
                 <DollarSign className="w-4 h-4" style={{ color: '#fbbf24' }} />
               </div>
               <div>
-                <p className="text-sm font-semibold text-[#EDEDEF]">Charge $1 RSVP Fee</p>
-                <p className="text-xs" style={{ color: '#8A8F98' }}>Require payment to reserve a spot</p>
+                <p className="text-sm font-semibold text-[#F5F0EB]">Charge $1 RSVP Fee</p>
+                <p className="text-xs" style={{ color: '#8C8680' }}>Require payment to reserve a spot</p>
               </div>
             </div>
             <button
               type="button"
               onClick={() => setRequiresPayment(p => !p)}
               className="w-12 h-6 rounded-full relative transition-colors duration-200 shrink-0"
-              style={{ background: requiresPayment ? '#5E6AD2' : 'rgba(255,255,255,0.10)' }}
+              style={{ background: requiresPayment ? '#F97316' : 'rgba(255,255,255,0.10)' }}
             >
               <span
                 className="absolute top-1 w-4 h-4 bg-white rounded-full shadow transition-all duration-200"

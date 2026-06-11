@@ -17,13 +17,13 @@ export default function SignOutButton() {
     <button
       onClick={signOut}
       className="flex items-center gap-2 text-sm font-medium px-4 py-2.5 rounded-xl transition-all duration-200"
-      style={{ background: 'rgba(255,255,255,0.04)', color: '#8A8F98', border: '1px solid rgba(255,255,255,0.07)' }}
+      style={{ background: 'rgba(255,255,255,0.04)', color: '#8C8680', border: '1px solid rgba(255,255,255,0.07)' }}
       onMouseEnter={e => {
-        e.currentTarget.style.color = '#EDEDEF'
+        e.currentTarget.style.color = '#F5F0EB'
         e.currentTarget.style.background = 'rgba(255,255,255,0.07)'
       }}
       onMouseLeave={e => {
-        e.currentTarget.style.color = '#8A8F98'
+        e.currentTarget.style.color = '#8C8680'
         e.currentTarget.style.background = 'rgba(255,255,255,0.04)'
       }}
     >

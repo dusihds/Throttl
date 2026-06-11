@@ -25,7 +25,7 @@ export interface CategoryMeta {
 }
 
 export const CATEGORY_META: Record<NewsCategory, CategoryMeta> = {
-  'cars':               { label: 'Cars',             emoji: '🚗', group: 'cars',       color: { bg: 'rgba(94,106,210,0.12)',  text: '#818cf8', border: 'rgba(94,106,210,0.25)' } },
+  'cars':               { label: 'Cars',             emoji: '🚗', group: 'cars',       color: { bg: 'rgba(249,115,22,0.12)',  text: '#FB923C', border: 'rgba(249,115,22,0.25)' } },
   'f1':                 { label: 'Formula 1',        emoji: '🏎️', group: 'motorsport', color: { bg: 'rgba(220,38,38,0.12)',   text: '#f87171', border: 'rgba(220,38,38,0.25)'  } },
   'motogp':             { label: 'MotoGP',           emoji: '🏍️', group: 'motorsport', color: { bg: 'rgba(234,88,12,0.12)',   text: '#fb923c', border: 'rgba(234,88,12,0.25)'  } },
   'wrc':                { label: 'WRC / Rally',      emoji: '🪨', group: 'motorsport', color: { bg: 'rgba(22,163,74,0.12)',   text: '#4ade80', border: 'rgba(22,163,74,0.25)'  } },

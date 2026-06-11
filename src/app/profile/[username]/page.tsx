@@ -42,7 +42,7 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
 
   return (
     <div className="max-w-2xl mx-auto px-4 py-10">
-      <Link href="/search" className="inline-flex items-center gap-2 text-sm mb-8 transition-colors text-[#8A8F98] hover:text-[#EDEDEF]">
+      <Link href="/search" className="inline-flex items-center gap-2 text-sm mb-8 transition-colors text-[#8C8680] hover:text-[#F5F0EB]">
         <ArrowLeft className="w-4 h-4" /> Back to Search
       </Link>
 
@@ -53,10 +53,10 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
 
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 flex-wrap mb-1">
-              <h1 className="text-2xl font-bold text-[#EDEDEF] tracking-tight">@{profile.username}</h1>
+              <h1 className="text-2xl font-bold text-[#F5F0EB] tracking-tight">@{profile.username}</h1>
               {isDev && (
                 <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full tracking-widest uppercase"
-                  style={{ background: 'rgba(94,106,210,0.15)', color: '#818cf8', border: '1px solid rgba(94,106,210,0.30)' }}>
+                  style={{ background: 'rgba(249,115,22,0.15)', color: '#FB923C', border: '1px solid rgba(249,115,22,0.30)' }}>
                   ⚡ Developer
                 </span>
               )}
@@ -77,7 +77,7 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
             </div>
 
             {profile.bio && (
-              <p className="text-sm leading-relaxed mb-2" style={{ color: '#8A8F98' }}>{profile.bio}</p>
+              <p className="text-sm leading-relaxed mb-2" style={{ color: '#8C8680' }}>{profile.bio}</p>
             )}
 
             {isDev ? (
@@ -88,11 +88,11 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
             ) : avgRating !== null ? (
               <div className="flex items-center gap-2">
                 <StarRating value={avgRating} size="sm" />
-                <span className="text-xs font-semibold text-[#EDEDEF]">{avgRating.toFixed(1)}</span>
-                <span className="text-xs" style={{ color: '#8A8F98' }}>({reviewList.length} {reviewList.length === 1 ? 'review' : 'reviews'})</span>
+                <span className="text-xs font-semibold text-[#F5F0EB]">{avgRating.toFixed(1)}</span>
+                <span className="text-xs" style={{ color: '#8C8680' }}>({reviewList.length} {reviewList.length === 1 ? 'review' : 'reviews'})</span>
               </div>
             ) : (
-              <p className="text-xs" style={{ color: '#8A8F98' }}>No reviews yet</p>
+              <p className="text-xs" style={{ color: '#8C8680' }}>No reviews yet</p>
             )}
 
             <div className="flex items-center gap-4 mt-3 pt-3" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
@@ -108,13 +108,13 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
 
       {/* Reviews */}
       <div className="mb-3">
-        <p className="text-[11px] font-mono text-[#5E6AD2] uppercase tracking-widest mb-1">Community feedback</p>
-        <h2 className="text-xl font-bold text-[#EDEDEF] tracking-tight mb-5">Reviews</h2>
+        <p className="text-[11px] font-mono text-[#F97316] uppercase tracking-widest mb-1">Community feedback</p>
+        <h2 className="text-xl font-bold text-[#F5F0EB] tracking-tight mb-5">Reviews</h2>
       </div>
 
       {reviewList.length === 0 ? (
         <div className="text-center py-10 rounded-2xl" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)' }}>
-          <p className="text-sm" style={{ color: '#8A8F98' }}>
+          <p className="text-sm" style={{ color: '#8C8680' }}>
             {isDev ? 'Developer accounts have a permanent 5-star status.' : 'No reviews yet.'}
           </p>
         </div>
@@ -125,13 +125,13 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
               <div className="flex items-center justify-between gap-3 mb-2">
                 <div className="flex items-center gap-2">
                   <StarRating value={review.rating} size="sm" color={isDev ? '#7dd3fc' : undefined} />
-                  <span className="text-xs font-semibold text-[#EDEDEF]">{review.rating}/5</span>
+                  <span className="text-xs font-semibold text-[#F5F0EB]">{review.rating}/5</span>
                 </div>
-                <Link href={`/profile/${(review.profiles as any)?.username ?? ''}`} className="text-[11px] font-mono hover:text-[#EDEDEF] transition-colors" style={{ color: '#8A8F98' }}>
+                <Link href={`/profile/${(review.profiles as any)?.username ?? ''}`} className="text-[11px] font-mono hover:text-[#F5F0EB] transition-colors" style={{ color: '#8C8680' }}>
                   @{(review.profiles as any)?.username ?? 'unknown'}
                 </Link>
               </div>
-              {review.comment && <p className="text-sm leading-relaxed" style={{ color: '#EDEDEF' }}>{review.comment}</p>}
+              {review.comment && <p className="text-sm leading-relaxed" style={{ color: '#F5F0EB' }}>{review.comment}</p>}
             </div>
           ))}
         </div>
@@ -143,8 +143,8 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
 function Stat({ label, value }: { label: string; value: number }) {
   return (
     <div>
-      <span className="text-sm font-bold text-[#EDEDEF]">{value}</span>
-      <span className="text-xs font-mono ml-1" style={{ color: '#8A8F98' }}>{label}</span>
+      <span className="text-sm font-bold text-[#F5F0EB]">{value}</span>
+      <span className="text-xs font-mono ml-1" style={{ color: '#8C8680' }}>{label}</span>
     </div>
   )
 }

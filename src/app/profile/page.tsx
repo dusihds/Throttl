@@ -50,10 +50,10 @@ export default async function ProfilePage() {
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 mb-5">
           <div className="flex items-start gap-3 flex-wrap">
             <div className="flex items-center gap-2 flex-wrap">
-              <h1 className="text-xl font-bold text-[#EDEDEF] tracking-tight">@{username}</h1>
+              <h1 className="text-xl font-bold text-[#F5F0EB] tracking-tight">@{username}</h1>
               {isDev && (
                 <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full tracking-widest uppercase"
-                  style={{ background: 'rgba(94,106,210,0.15)', color: '#818cf8', border: '1px solid rgba(94,106,210,0.30)' }}>
+                  style={{ background: 'rgba(249,115,22,0.15)', color: '#FB923C', border: '1px solid rgba(249,115,22,0.30)' }}>
                   ⚡ Developer
                 </span>
               )}
@@ -81,8 +81,8 @@ export default async function ProfilePage() {
             ) : avgRating !== null ? (
               <div className="w-full flex items-center gap-2">
                 <StarRating value={avgRating} size="sm" />
-                <span className="text-xs font-semibold text-[#EDEDEF]">{avgRating.toFixed(1)}</span>
-                <span className="text-xs" style={{ color: '#8A8F98' }}>({reviewList.length} {reviewList.length === 1 ? 'review' : 'reviews'})</span>
+                <span className="text-xs font-semibold text-[#F5F0EB]">{avgRating.toFixed(1)}</span>
+                <span className="text-xs" style={{ color: '#8C8680' }}>({reviewList.length} {reviewList.length === 1 ? 'review' : 'reviews'})</span>
               </div>
             ) : null}
           </div>
@@ -110,9 +110,9 @@ export default async function ProfilePage() {
       <section className="mb-12">
         <div className="flex items-center justify-between mb-6">
           <div>
-            <p className="text-[11px] font-mono text-[#5E6AD2] uppercase tracking-widest mb-1">Your logs</p>
-            <h2 className="text-xl font-bold text-[#EDEDEF] tracking-tight flex items-center gap-2">
-              <Car className="w-5 h-5 text-[#5E6AD2]" /> My Spots
+            <p className="text-[11px] font-mono text-[#F97316] uppercase tracking-widest mb-1">Your logs</p>
+            <h2 className="text-xl font-bold text-[#F5F0EB] tracking-tight flex items-center gap-2">
+              <Car className="w-5 h-5 text-[#F97316]" /> My Spots
             </h2>
           </div>
           <Link href="/spots/new" className="btn-secondary text-sm py-2 px-4">+ Log Spot</Link>
@@ -130,9 +130,9 @@ export default async function ProfilePage() {
       <section className="mb-12">
         <div className="flex items-center justify-between mb-6">
           <div>
-            <p className="text-[11px] font-mono text-[#5E6AD2] uppercase tracking-widest mb-1">Your meetups</p>
-            <h2 className="text-xl font-bold text-[#EDEDEF] tracking-tight flex items-center gap-2">
-              <Calendar className="w-5 h-5 text-[#5E6AD2]" /> My Events
+            <p className="text-[11px] font-mono text-[#F97316] uppercase tracking-widest mb-1">Your meetups</p>
+            <h2 className="text-xl font-bold text-[#F5F0EB] tracking-tight flex items-center gap-2">
+              <Calendar className="w-5 h-5 text-[#F97316]" /> My Events
             </h2>
           </div>
           <Link href="/events/new" className="btn-secondary text-sm py-2 px-4">+ Create Event</Link>
@@ -149,12 +149,12 @@ export default async function ProfilePage() {
       {/* Reviews received */}
       <section>
         <div className="mb-6">
-          <p className="text-[11px] font-mono text-[#5E6AD2] uppercase tracking-widest mb-1">Community feedback</p>
-          <h2 className="text-xl font-bold text-[#EDEDEF] tracking-tight">Reviews</h2>
+          <p className="text-[11px] font-mono text-[#F97316] uppercase tracking-widest mb-1">Community feedback</p>
+          <h2 className="text-xl font-bold text-[#F5F0EB] tracking-tight">Reviews</h2>
         </div>
         {reviewList.length === 0 ? (
           <div className="text-center py-10 rounded-2xl" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)' }}>
-            <p className="text-sm" style={{ color: '#8A8F98' }}>
+            <p className="text-sm" style={{ color: '#8C8680' }}>
               {isDev ? 'Developer accounts have a permanent 5-star status.' : 'No reviews yet — attend events to get rated.'}
             </p>
           </div>
@@ -165,13 +165,13 @@ export default async function ProfilePage() {
                 <div className="flex items-center justify-between gap-3 mb-2">
                   <div className="flex items-center gap-2">
                     <StarRating value={review.rating} size="sm" color={isDev ? '#7dd3fc' : undefined} />
-                    <span className="text-xs font-semibold text-[#EDEDEF]">{review.rating}/5</span>
+                    <span className="text-xs font-semibold text-[#F5F0EB]">{review.rating}/5</span>
                   </div>
-                  <Link href={`/profile/${(review.profiles as any)?.username ?? ''}`} className="text-[11px] font-mono hover:text-[#EDEDEF] transition-colors" style={{ color: '#8A8F98' }}>
+                  <Link href={`/profile/${(review.profiles as any)?.username ?? ''}`} className="text-[11px] font-mono hover:text-[#F5F0EB] transition-colors" style={{ color: '#8C8680' }}>
                     @{(review.profiles as any)?.username ?? 'unknown'}
                   </Link>
                 </div>
-                {review.comment && <p className="text-sm leading-relaxed" style={{ color: '#EDEDEF' }}>{review.comment}</p>}
+                {review.comment && <p className="text-sm leading-relaxed" style={{ color: '#F5F0EB' }}>{review.comment}</p>}
               </div>
             ))}
           </div>
@@ -184,8 +184,8 @@ export default async function ProfilePage() {
 function Stat({ label, value }: { label: string; value: number }) {
   return (
     <div>
-      <span className="text-base font-bold text-[#EDEDEF]">{value}</span>
-      <span className="text-xs font-mono ml-1.5" style={{ color: '#8A8F98' }}>{label}</span>
+      <span className="text-base font-bold text-[#F5F0EB]">{value}</span>
+      <span className="text-xs font-mono ml-1.5" style={{ color: '#8C8680' }}>{label}</span>
     </div>
   )
 }
@@ -193,8 +193,8 @@ function Stat({ label, value }: { label: string; value: number }) {
 function EmptyState({ message, cta, href }: { message: string; cta: string; href: string }) {
   return (
     <div className="text-center py-10 rounded-2xl" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)' }}>
-      <p className="text-sm" style={{ color: '#8A8F98' }}>{message}</p>
-      <Link href={href} className="inline-block mt-3 text-sm font-medium text-[#5E6AD2] hover:text-[#818cf8] transition-colors">
+      <p className="text-sm" style={{ color: '#8C8680' }}>{message}</p>
+      <Link href={href} className="inline-block mt-3 text-sm font-medium text-[#F97316] hover:text-[#FB923C] transition-colors">
         {cta}
       </Link>
     </div>

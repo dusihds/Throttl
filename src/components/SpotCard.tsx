@@ -34,7 +34,7 @@ export default function SpotCard({ spot }: Props) {
         className="pointer-events-none absolute inset-0 rounded-2xl z-10 transition-opacity duration-300"
         style={{
           opacity: hovered ? 1 : 0,
-          background: `radial-gradient(280px circle at ${pos.x}px ${pos.y}px, rgba(94,106,210,0.12), transparent 70%)`,
+          background: `radial-gradient(280px circle at ${pos.x}px ${pos.y}px, rgba(249,115,22,0.12), transparent 70%)`,
         }}
       />
 
@@ -54,7 +54,7 @@ export default function SpotCard({ spot }: Props) {
           {spot.color && (
             <span
               className="text-[10px] font-medium px-2.5 py-1 rounded-full capitalize tracking-wide"
-              style={{ background: 'rgba(5,5,6,0.75)', color: '#EDEDEF', backdropFilter: 'blur(8px)', border: '1px solid rgba(255,255,255,0.08)' }}
+              style={{ background: 'rgba(5,5,6,0.75)', color: '#F5F0EB', backdropFilter: 'blur(8px)', border: '1px solid rgba(255,255,255,0.08)' }}
             >
               {spot.color}
             </span>
@@ -62,7 +62,7 @@ export default function SpotCard({ spot }: Props) {
           {spot.year && (
             <span
               className="text-[10px] font-mono font-medium px-2.5 py-1 rounded-full ml-auto"
-              style={{ background: 'rgba(5,5,6,0.75)', color: '#8A8F98', backdropFilter: 'blur(8px)', border: '1px solid rgba(255,255,255,0.08)' }}
+              style={{ background: 'rgba(5,5,6,0.75)', color: '#8C8680', backdropFilter: 'blur(8px)', border: '1px solid rgba(255,255,255,0.08)' }}
             >
               {spot.year}
             </span>
@@ -72,30 +72,30 @@ export default function SpotCard({ spot }: Props) {
 
       {/* Content */}
       <div className="p-4">
-        <h3 className="font-semibold text-[#EDEDEF] text-base leading-tight tracking-tight">
+        <h3 className="font-semibold text-[#F5F0EB] text-base leading-tight tracking-tight">
           {spot.make} {spot.model}
         </h3>
 
         {spot.profiles && (
           <div className="flex items-center gap-1.5 mt-0.5">
-            <p className="text-[11px] text-[#8A8F98] font-mono">@{spot.profiles.username}</p>
+            <p className="text-[11px] text-[#8C8680] font-mono">@{spot.profiles.username}</p>
             {spot.profiles.is_developer && <DevBadge />}
           </div>
         )}
 
         <div className="mt-3 flex flex-col gap-1.5">
-          <div className="flex items-center gap-2 text-[#8A8F98] text-xs">
-            <MapPin className="w-3 h-3 text-[#5E6AD2] shrink-0" />
+          <div className="flex items-center gap-2 text-[#8C8680] text-xs">
+            <MapPin className="w-3 h-3 text-[#F97316] shrink-0" />
             <span className="truncate">{spot.location_name}</span>
           </div>
           {spot.estimated_worth && (
-            <div className="flex items-center gap-2 text-[#8A8F98] text-xs">
-              <DollarSign className="w-3 h-3 text-[#5E6AD2] shrink-0" />
-              <span className="text-[#EDEDEF] font-medium">~${spot.estimated_worth.toLocaleString()}</span>
+            <div className="flex items-center gap-2 text-[#8C8680] text-xs">
+              <DollarSign className="w-3 h-3 text-[#F97316] shrink-0" />
+              <span className="text-[#F5F0EB] font-medium">~${spot.estimated_worth.toLocaleString()}</span>
             </div>
           )}
-          <div className="flex items-center gap-2 text-[#8A8F98] text-xs">
-            <Calendar className="w-3 h-3 text-[#5E6AD2] shrink-0" />
+          <div className="flex items-center gap-2 text-[#8C8680] text-xs">
+            <Calendar className="w-3 h-3 text-[#F97316] shrink-0" />
             <span>{format(new Date(spot.spotted_at), 'MMM d, yyyy')}</span>
           </div>
         </div>
@@ -108,7 +108,7 @@ function DevBadge() {
   return (
     <span
       className="inline-flex items-center text-[9px] font-mono font-bold px-1.5 py-0.5 rounded tracking-widest uppercase"
-      style={{ background: 'rgba(94,106,210,0.15)', color: '#818cf8', border: '1px solid rgba(94,106,210,0.30)' }}
+      style={{ background: 'rgba(249,115,22,0.15)', color: '#FB923C', border: '1px solid rgba(249,115,22,0.30)' }}
       title="Developer"
     >
       ⚡ DEV

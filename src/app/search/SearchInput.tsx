@@ -16,7 +16,7 @@ export default function SearchInput({ initialQuery }: { initialQuery: string }) 
 
   return (
     <div className="relative">
-      <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 pointer-events-none" style={{ color: '#8A8F98' }} />
+      <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 pointer-events-none" style={{ color: '#8C8680' }} />
       <input
         type="text"
         value={value}

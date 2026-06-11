@@ -29,8 +29,8 @@ export default async function EventsPage() {
     <div className="max-w-6xl mx-auto px-4 py-10">
       <div className="flex items-end justify-between mb-10">
         <div>
-          <p className="text-[11px] font-mono text-[#5E6AD2] uppercase tracking-widest mb-2">Community meetups</p>
-          <h1 className="text-3xl font-bold text-[#EDEDEF] tracking-tight">Car Events</h1>
+          <p className="text-[11px] font-mono text-[#F97316] uppercase tracking-widest mb-2">Community meetups</p>
+          <h1 className="text-3xl font-bold text-[#F5F0EB] tracking-tight">Car Events</h1>
         </div>
         <Link href="/events/new" className="btn-primary text-sm py-2.5 px-5">
           <PlusCircle className="w-4 h-4" />

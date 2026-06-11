@@ -27,7 +27,7 @@ export default function VerifyEventButton({ id, isVerified }: { id: string; isVe
       className="flex items-center gap-1.5 text-xs font-semibold px-3 py-2 rounded-lg transition-all duration-150"
       style={{
         background: verified ? 'rgba(34,197,94,0.12)' : 'rgba(255,255,255,0.05)',
-        color:      verified ? '#4ade80' : '#8A8F98',
+        color:      verified ? '#4ade80' : '#8C8680',
         border:     verified ? '1px solid rgba(34,197,94,0.30)' : '1px solid rgba(255,255,255,0.08)',
       }}
       title="Developer: toggle verified status"

@@ -106,7 +106,7 @@ export default function EventCard({ event, distance, index = 0, isOwner = false 
           className="pointer-events-none absolute inset-0 rounded-2xl z-10 transition-opacity duration-300"
           style={{
             opacity: hovered ? 1 : 0,
-            background: `radial-gradient(280px circle at ${pos.x}px ${pos.y}px, rgba(94,106,210,0.12), transparent 70%)`,
+            background: `radial-gradient(280px circle at ${pos.x}px ${pos.y}px, rgba(249,115,22,0.12), transparent 70%)`,
           }}
         />
 
@@ -127,7 +127,7 @@ export default function EventCard({ event, distance, index = 0, isOwner = false 
             <div className="flex items-center gap-1.5 flex-wrap">
               {event.is_recurring && event.recurrence_rule && (
                 <span className="flex items-center gap-1.5 text-[10px] font-semibold px-2.5 py-1 rounded-full tracking-wide"
-                  style={{ background: 'rgba(94,106,210,0.20)', color: '#818cf8', backdropFilter: 'blur(8px)', border: '1px solid rgba(94,106,210,0.30)' }}>
+                  style={{ background: 'rgba(249,115,22,0.20)', color: '#FB923C', backdropFilter: 'blur(8px)', border: '1px solid rgba(249,115,22,0.30)' }}>
                   <RefreshCw className="w-2.5 h-2.5" />
                   {recurrenceLabel(event.recurrence_rule)}
                 </span>
@@ -149,7 +149,7 @@ export default function EventCard({ event, distance, index = 0, isOwner = false 
             </div>
             {distance !== undefined && (
               <span className="flex items-center gap-1 text-[10px] font-mono font-medium px-2.5 py-1 rounded-full ml-auto"
-                style={{ background: 'rgba(5,5,6,0.75)', color: '#818cf8', backdropFilter: 'blur(8px)', border: '1px solid rgba(94,106,210,0.25)' }}>
+                style={{ background: 'rgba(5,5,6,0.75)', color: '#FB923C', backdropFilter: 'blur(8px)', border: '1px solid rgba(249,115,22,0.25)' }}>
                 <Navigation className="w-2.5 h-2.5" />
                 {formatKm(distance)}
               </span>
@@ -159,14 +159,14 @@ export default function EventCard({ event, distance, index = 0, isOwner = false 
 
         {/* Content */}
         <div className="p-4">
-          <h3 className="font-semibold text-[#EDEDEF] text-base leading-tight tracking-tight">{event.title}</h3>
+          <h3 className="font-semibold text-[#F5F0EB] text-base leading-tight tracking-tight">{event.title}</h3>
 
           {event.profiles && (
             <div className="flex items-center gap-1.5 mt-0.5">
               <button
                 type="button"
                 onClick={e => { e.preventDefault(); e.stopPropagation(); router.push(`/profile/${event.profiles!.username}`) }}
-                className="text-[11px] text-[#8A8F98] font-mono hover:text-[#5E6AD2] transition-colors bg-transparent border-none p-0 cursor-pointer"
+                className="text-[11px] text-[#8C8680] font-mono hover:text-[#F97316] transition-colors bg-transparent border-none p-0 cursor-pointer"
               >
                 @{event.profiles.username}
               </button>
@@ -175,19 +175,19 @@ export default function EventCard({ event, distance, index = 0, isOwner = false 
           )}
 
           <div className="mt-3 flex flex-col gap-1.5">
-            <div className="flex items-center gap-2 text-[#8A8F98] text-xs">
-              <Clock className="w-3 h-3 text-[#5E6AD2] shrink-0" />
-              <span className="text-[#EDEDEF] font-medium">{format(new Date(event.start_time), 'EEE, MMM d · h:mm a')}</span>
+            <div className="flex items-center gap-2 text-[#8C8680] text-xs">
+              <Clock className="w-3 h-3 text-[#F97316] shrink-0" />
+              <span className="text-[#F5F0EB] font-medium">{format(new Date(event.start_time), 'EEE, MMM d · h:mm a')}</span>
             </div>
-            <div className="flex items-center gap-2 text-[#8A8F98] text-xs">
-              <MapPin className="w-3 h-3 text-[#5E6AD2] shrink-0" />
+            <div className="flex items-center gap-2 text-[#8C8680] text-xs">
+              <MapPin className="w-3 h-3 text-[#F97316] shrink-0" />
               <span className="truncate">{event.location_name}</span>
             </div>
             {typeof event.attendee_count === 'number' && (
-              <div className="flex items-center gap-2 text-[#8A8F98] text-xs">
-                <Users className="w-3 h-3 text-[#5E6AD2] shrink-0" />
+              <div className="flex items-center gap-2 text-[#8C8680] text-xs">
+                <Users className="w-3 h-3 text-[#F97316] shrink-0" />
                 {event.max_capacity != null ? (
-                  <span style={{ color: isFull ? '#f87171' : '#8A8F98' }}>
+                  <span style={{ color: isFull ? '#f87171' : '#8C8680' }}>
                     {event.attendee_count}/{event.max_capacity} {isFull ? '· Full' : 'going'}
                   </span>
                 ) : (
@@ -205,7 +205,7 @@ export default function EventCard({ event, distance, index = 0, isOwner = false 
 
           {/* Owner hint */}
           {isOwner && (
-            <p className="mt-3 text-[10px] font-mono" style={{ color: 'rgba(94,106,210,0.5)' }}>
+            <p className="mt-3 text-[10px] font-mono" style={{ color: 'rgba(249,115,22,0.5)' }}>
               right-click to edit or delete
             </p>
           )}
@@ -233,11 +233,11 @@ export default function EventCard({ event, distance, index = 0, isOwner = false 
           <button
             onClick={handleEdit}
             className="w-full flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors duration-150 text-left"
-            style={{ color: '#EDEDEF' }}
-            onMouseEnter={e => (e.currentTarget.style.background = 'rgba(94,106,210,0.15)')}
+            style={{ color: '#F5F0EB' }}
+            onMouseEnter={e => (e.currentTarget.style.background = 'rgba(249,115,22,0.15)')}
             onMouseLeave={e => (e.currentTarget.style.background = 'transparent')}
           >
-            <Pencil className="w-3.5 h-3.5 text-[#818cf8]" />
+            <Pencil className="w-3.5 h-3.5 text-[#FB923C]" />
             Edit event
           </button>
 
@@ -247,14 +247,14 @@ export default function EventCard({ event, distance, index = 0, isOwner = false 
             onClick={handleDelete}
             disabled={deleting}
             className="w-full flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors duration-150 text-left disabled:opacity-50"
-            style={{ color: confirmDelete ? '#f87171' : '#8A8F98' }}
+            style={{ color: confirmDelete ? '#f87171' : '#8C8680' }}
             onMouseEnter={e => {
               e.currentTarget.style.background = 'rgba(239,68,68,0.12)'
               e.currentTarget.style.color = '#f87171'
             }}
             onMouseLeave={e => {
               e.currentTarget.style.background = 'transparent'
-              e.currentTarget.style.color = confirmDelete ? '#f87171' : '#8A8F98'
+              e.currentTarget.style.color = confirmDelete ? '#f87171' : '#8C8680'
             }}
           >
             <Trash2 className="w-3.5 h-3.5" />
@@ -271,7 +271,7 @@ function DevBadge() {
   return (
     <span
       className="inline-flex items-center text-[9px] font-mono font-bold px-1.5 py-0.5 rounded tracking-widest uppercase"
-      style={{ background: 'rgba(94,106,210,0.15)', color: '#818cf8', border: '1px solid rgba(94,106,210,0.30)' }}
+      style={{ background: 'rgba(249,115,22,0.15)', color: '#FB923C', border: '1px solid rgba(249,115,22,0.30)' }}
       title="Developer"
     >
       ⚡ DEV

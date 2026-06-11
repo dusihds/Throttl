@@ -32,7 +32,7 @@ export default function SpotlightCard({ children, className = '' }: Props) {
         className="pointer-events-none absolute inset-0 rounded-2xl transition-opacity duration-300"
         style={{
           opacity: hovered ? 1 : 0,
-          background: `radial-gradient(280px circle at ${pos.x}px ${pos.y}px, rgba(94,106,210,0.13), transparent 70%)`,
+          background: `radial-gradient(280px circle at ${pos.x}px ${pos.y}px, rgba(249,115,22,0.13), transparent 70%)`,
         }}
       />
       {children}

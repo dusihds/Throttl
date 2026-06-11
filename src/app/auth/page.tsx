@@ -183,12 +183,12 @@ export default function AuthPage() {
         <div className="text-center mb-10">
           <div
             className="inline-flex items-center justify-center w-14 h-14 rounded-2xl mb-5"
-            style={{ background: 'rgba(94,106,210,0.12)', border: '1px solid rgba(94,106,210,0.25)' }}
+            style={{ background: 'rgba(249,115,22,0.12)', border: '1px solid rgba(249,115,22,0.25)' }}
           >
-            <Car className="w-7 h-7 text-[#5E6AD2]" />
+            <Car className="w-7 h-7 text-[#F97316]" />
           </div>
-          <h1 className="text-2xl font-bold text-[#EDEDEF] tracking-tight">Throttl</h1>
-          <p className="text-sm mt-1.5" style={{ color: '#8A8F98' }}>
+          <h1 className="text-2xl font-bold text-[#F5F0EB] tracking-tight">Throttl</h1>
+          <p className="text-sm mt-1.5" style={{ color: '#8C8680' }}>
             {mode === 'signin' ? 'Welcome back' : 'Join the community'}
           </p>
         </div>
@@ -210,9 +210,9 @@ export default function AuthPage() {
                 onClick={() => switchMode(m)}
                 className="flex-1 py-2 text-sm font-medium rounded-lg transition-all duration-200"
                 style={{
-                  background: mode === m ? '#5E6AD2' : 'transparent',
-                  color: mode === m ? 'white' : '#8A8F98',
-                  boxShadow: mode === m ? '0 2px 8px rgba(94,106,210,0.35)' : 'none',
+                  background: mode === m ? '#F97316' : 'transparent',
+                  color: mode === m ? 'white' : '#8C8680',
+                  boxShadow: mode === m ? '0 2px 8px rgba(249,115,22,0.35)' : 'none',
                 }}
               >
                 {m === 'signin' ? 'Sign In' : 'Sign Up'}
@@ -223,13 +223,13 @@ export default function AuthPage() {
           {success ? (
             <div
               className="flex flex-col items-center text-center gap-3 py-6 px-4 rounded-xl"
-              style={{ background: 'rgba(94,106,210,0.08)', border: '1px solid rgba(94,106,210,0.20)' }}
+              style={{ background: 'rgba(249,115,22,0.08)', border: '1px solid rgba(249,115,22,0.20)' }}
             >
-              <CheckCircle className="w-8 h-8 text-[#5E6AD2]" />
-              <p className="text-sm text-[#EDEDEF] leading-relaxed">{success}</p>
+              <CheckCircle className="w-8 h-8 text-[#F97316]" />
+              <p className="text-sm text-[#F5F0EB] leading-relaxed">{success}</p>
               <button
                 onClick={() => switchMode('signin')}
-                className="text-sm font-medium text-[#5E6AD2] hover:text-[#818cf8] transition-colors"
+                className="text-sm font-medium text-[#F97316] hover:text-[#FB923C] transition-colors"
               >
                 Back to Sign In →
               </button>
@@ -239,7 +239,7 @@ export default function AuthPage() {
 
               {/* Email */}
               <div>
-                <label className="block text-[10px] font-mono font-medium mb-1.5 uppercase tracking-widest" style={{ color: '#8A8F98' }}>Email</label>
+                <label className="block text-[10px] font-mono font-medium mb-1.5 uppercase tracking-widest" style={{ color: '#8C8680' }}>Email</label>
                 <input
                   type="email"
                   value={email}
@@ -249,7 +249,7 @@ export default function AuthPage() {
                   className="input"
                 />
                 {isDevEmail && mode === 'signup' && (
-                  <p className="text-[11px] font-mono mt-1.5" style={{ color: '#818cf8' }}>
+                  <p className="text-[11px] font-mono mt-1.5" style={{ color: '#FB923C' }}>
                     ⚡ Developer account — username length restrictions lifted
                   </p>
                 )}
@@ -263,11 +263,11 @@ export default function AuthPage() {
               {/* Username (signup only) */}
               {mode === 'signup' && (
                 <div>
-                  <label className="block text-[10px] font-mono font-medium mb-1.5 uppercase tracking-widest" style={{ color: '#8A8F98' }}>Username</label>
+                  <label className="block text-[10px] font-mono font-medium mb-1.5 uppercase tracking-widest" style={{ color: '#8C8680' }}>Username</label>
                   <div className="relative">
                     <AtSign
                       className="absolute left-3.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5"
-                      style={{ color: '#8A8F98' }}
+                      style={{ color: '#8C8680' }}
                     />
                     <input
                       type="text"
@@ -287,7 +287,7 @@ export default function AuthPage() {
                     />
                     {/* Status icon */}
                     <div className="absolute right-3.5 top-1/2 -translate-y-1/2">
-                      {usernameChecking && <Loader2 className="w-3.5 h-3.5 text-[#8A8F98] animate-spin" />}
+                      {usernameChecking && <Loader2 className="w-3.5 h-3.5 text-[#8C8680] animate-spin" />}
                       {!usernameChecking && usernameAvailable && <CheckCircle className="w-3.5 h-3.5 text-green-400" />}
                       {!usernameChecking && usernameError && username.length > 0 && <AlertCircle className="w-3.5 h-3.5 text-red-400" />}
                     </div>
@@ -300,7 +300,7 @@ export default function AuthPage() {
                     <p className="text-[11px] mt-1.5" style={{ color: '#4ade80' }}>@{username} is available</p>
                   )}
                   {!isDevEmail && !isEarlyAccessEmail && (
-                    <p className="text-[11px] mt-1.5" style={{ color: '#8A8F98' }}>
+                    <p className="text-[11px] mt-1.5" style={{ color: '#8C8680' }}>
                       Min 3 characters · letters, numbers, underscores only
                     </p>
                   )}
@@ -309,7 +309,7 @@ export default function AuthPage() {
 
               {/* Password */}
               <div>
-                <label className="block text-[10px] font-mono font-medium mb-1.5 uppercase tracking-widest" style={{ color: '#8A8F98' }}>Password</label>
+                <label className="block text-[10px] font-mono font-medium mb-1.5 uppercase tracking-widest" style={{ color: '#8C8680' }}>Password</label>
                 <input
                   type="password"
                   value={password}
@@ -320,7 +320,7 @@ export default function AuthPage() {
                   className="input"
                 />
                 {mode === 'signup' && (
-                  <p className="text-[11px] mt-1.5" style={{ color: '#8A8F98' }}>Minimum 6 characters</p>
+                  <p className="text-[11px] mt-1.5" style={{ color: '#8C8680' }}>Minimum 6 characters</p>
                 )}
               </div>
 
@@ -328,9 +328,9 @@ export default function AuthPage() {
               {mode === 'signup' && (
                 <div
                   className="flex items-start gap-2.5 px-3.5 py-3 rounded-xl text-xs leading-relaxed"
-                  style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)', color: '#8A8F98' }}
+                  style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)', color: '#8C8680' }}
                 >
-                  <CheckCircle className="w-3.5 h-3.5 text-[#5E6AD2] shrink-0 mt-0.5" />
+                  <CheckCircle className="w-3.5 h-3.5 text-[#F97316] shrink-0 mt-0.5" />
                   <span>We'll send a confirmation link to your email. You must verify before signing in.</span>
                 </div>
               )}
@@ -364,9 +364,9 @@ export default function AuthPage() {
           )}
         </div>
 
-        <p className="text-center text-xs mt-6" style={{ color: '#8A8F98' }}>
+        <p className="text-center text-xs mt-6" style={{ color: '#8C8680' }}>
           By signing up you agree to our{' '}
-          <a href="/privacy" className="text-[#5E6AD2] hover:text-[#818cf8] transition-colors underline underline-offset-2">
+          <a href="/privacy" className="text-[#F97316] hover:text-[#FB923C] transition-colors underline underline-offset-2">
             Privacy Policy
           </a>
         </p>

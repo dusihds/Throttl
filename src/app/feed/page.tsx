@@ -26,12 +26,12 @@ export default async function FeedPage() {
   return (
     <div className="max-w-2xl mx-auto px-4 py-10">
       <div className="mb-8">
-        <p className="text-[11px] font-mono text-[#5E6AD2] uppercase tracking-widest mb-2">Community</p>
-        <h1 className="text-3xl font-bold text-[#EDEDEF] tracking-tight flex items-center gap-2">
-          <MessageCircle className="w-7 h-7 text-[#5E6AD2]" />
+        <p className="text-[11px] font-mono text-[#F97316] uppercase tracking-widest mb-2">Community</p>
+        <h1 className="text-3xl font-bold text-[#F5F0EB] tracking-tight flex items-center gap-2">
+          <MessageCircle className="w-7 h-7 text-[#F97316]" />
           The Feed
         </h1>
-        <p className="text-sm mt-1" style={{ color: '#8A8F98' }}>
+        <p className="text-sm mt-1" style={{ color: '#8C8680' }}>
           Share opinions, drop polls, and talk cars.
         </p>
       </div>

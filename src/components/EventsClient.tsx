@@ -81,9 +81,9 @@ export default function EventsClient({ events, currentUserId }: Props) {
             onClick={() => setShowReason(true)}
             className="flex items-center gap-2 text-sm font-medium px-4 py-2.5 rounded-xl transition-all duration-200"
             style={{
-              background: 'rgba(94,106,210,0.10)',
-              color: '#818cf8',
-              border: '1px solid rgba(94,106,210,0.22)',
+              background: 'rgba(249,115,22,0.10)',
+              color: '#FB923C',
+              border: '1px solid rgba(249,115,22,0.22)',
             }}
           >
             <Navigation className="w-4 h-4" />
@@ -92,15 +92,15 @@ export default function EventsClient({ events, currentUserId }: Props) {
         )}
 
         {geoState === 'requesting' && (
-          <div className="flex items-center gap-2 text-sm px-4 py-2.5 rounded-xl" style={{ color: '#8A8F98', border: '1px solid rgba(255,255,255,0.07)', background: 'rgba(255,255,255,0.03)' }}>
-            <Loader2 className="w-4 h-4 animate-spin text-[#5E6AD2]" />
+          <div className="flex items-center gap-2 text-sm px-4 py-2.5 rounded-xl" style={{ color: '#8C8680', border: '1px solid rgba(255,255,255,0.07)', background: 'rgba(255,255,255,0.03)' }}>
+            <Loader2 className="w-4 h-4 animate-spin text-[#F97316]" />
             Locating you…
           </div>
         )}
 
         {geoState === 'granted' && (
           <>
-            <div className="flex items-center gap-2 text-xs px-3.5 py-2 rounded-full font-mono" style={{ background: 'rgba(94,106,210,0.12)', color: '#818cf8', border: '1px solid rgba(94,106,210,0.22)' }}>
+            <div className="flex items-center gap-2 text-xs px-3.5 py-2 rounded-full font-mono" style={{ background: 'rgba(249,115,22,0.12)', color: '#FB923C', border: '1px solid rgba(249,115,22,0.22)' }}>
               <MapPin className="w-3 h-3" />
               Location active
             </div>
@@ -113,9 +113,9 @@ export default function EventsClient({ events, currentUserId }: Props) {
                   onClick={() => setMaxKm(opt.value)}
                   className="text-xs px-3.5 py-2 rounded-full font-medium transition-all duration-200"
                   style={{
-                    background: maxKm === opt.value ? 'rgba(94,106,210,0.20)' : 'rgba(255,255,255,0.04)',
-                    color: maxKm === opt.value ? '#818cf8' : '#8A8F98',
-                    border: maxKm === opt.value ? '1px solid rgba(94,106,210,0.30)' : '1px solid rgba(255,255,255,0.06)',
+                    background: maxKm === opt.value ? 'rgba(249,115,22,0.20)' : 'rgba(255,255,255,0.04)',
+                    color: maxKm === opt.value ? '#FB923C' : '#8C8680',
+                    border: maxKm === opt.value ? '1px solid rgba(249,115,22,0.30)' : '1px solid rgba(255,255,255,0.06)',
                   }}
                 >
                   {opt.label}
@@ -126,9 +126,9 @@ export default function EventsClient({ events, currentUserId }: Props) {
             <button
               onClick={clearLocation}
               className="ml-auto flex items-center gap-1.5 text-xs px-3 py-2 rounded-lg transition-all duration-200"
-              style={{ color: '#8A8F98', border: '1px solid rgba(255,255,255,0.07)' }}
-              onMouseEnter={e => (e.currentTarget.style.color = '#EDEDEF')}
-              onMouseLeave={e => (e.currentTarget.style.color = '#8A8F98')}
+              style={{ color: '#8C8680', border: '1px solid rgba(255,255,255,0.07)' }}
+              onMouseEnter={e => (e.currentTarget.style.color = '#F5F0EB')}
+              onMouseLeave={e => (e.currentTarget.style.color = '#8C8680')}
             >
               <X className="w-3 h-3" /> Clear
             </button>
@@ -150,19 +150,19 @@ export default function EventsClient({ events, currentUserId }: Props) {
       {showReason && (
         <div
           className="rounded-2xl p-5 mb-6 flex flex-col gap-4"
-          style={{ background: 'rgba(94,106,210,0.07)', border: '1px solid rgba(94,106,210,0.20)' }}
+          style={{ background: 'rgba(249,115,22,0.07)', border: '1px solid rgba(249,115,22,0.20)' }}
         >
           <div className="flex items-start gap-3">
             <div className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
-              style={{ background: 'rgba(94,106,210,0.15)', border: '1px solid rgba(94,106,210,0.25)' }}>
-              <Navigation className="w-4 h-4 text-[#5E6AD2]" />
+              style={{ background: 'rgba(249,115,22,0.15)', border: '1px solid rgba(249,115,22,0.25)' }}>
+              <Navigation className="w-4 h-4 text-[#F97316]" />
             </div>
             <div>
-              <p className="text-sm font-semibold text-[#EDEDEF] mb-1">Why we need your location</p>
-              <p className="text-sm leading-relaxed" style={{ color: '#8A8F98' }}>
-                Throttl uses your device location <strong className="text-[#EDEDEF]">only in your browser</strong> to
+              <p className="text-sm font-semibold text-[#F5F0EB] mb-1">Why we need your location</p>
+              <p className="text-sm leading-relaxed" style={{ color: '#8C8680' }}>
+                Throttl uses your device location <strong className="text-[#F5F0EB]">only in your browser</strong> to
                 calculate how far each car event is from you and sort them by distance.{' '}
-                <strong className="text-[#EDEDEF]">Your coordinates are never sent to or stored on our servers.</strong>{' '}
+                <strong className="text-[#F5F0EB]">Your coordinates are never sent to or stored on our servers.</strong>{' '}
                 You can clear your location at any time.
               </p>
             </div>
@@ -184,7 +184,7 @@ export default function EventsClient({ events, currentUserId }: Props) {
 
       {/* ── Results count ─────────────────────────────────── */}
       {geoState === 'granted' && maxKm !== null && (
-        <p className="text-xs font-mono mb-5" style={{ color: '#8A8F98' }}>
+        <p className="text-xs font-mono mb-5" style={{ color: '#8C8680' }}>
           {sorted.length} event{sorted.length !== 1 ? 's' : ''} within {maxKm} km of your location
         </p>
       )}
@@ -198,10 +198,10 @@ export default function EventsClient({ events, currentUserId }: Props) {
         </div>
       ) : (
         <div className="flex flex-col items-center text-center py-16">
-          <MapPin className="w-10 h-10 mb-4" style={{ color: 'rgba(94,106,210,0.4)' }} />
-          <p className="text-base font-semibold text-[#EDEDEF] mb-2">No events within {maxKm} km</p>
-          <p className="text-sm mb-6" style={{ color: '#8A8F98' }}>Try a larger radius or{' '}
-            <button onClick={() => setMaxKm(null)} className="text-[#5E6AD2] hover:text-[#818cf8] transition-colors underline underline-offset-2">
+          <MapPin className="w-10 h-10 mb-4" style={{ color: 'rgba(249,115,22,0.4)' }} />
+          <p className="text-base font-semibold text-[#F5F0EB] mb-2">No events within {maxKm} km</p>
+          <p className="text-sm mb-6" style={{ color: '#8C8680' }}>Try a larger radius or{' '}
+            <button onClick={() => setMaxKm(null)} className="text-[#F97316] hover:text-[#FB923C] transition-colors underline underline-offset-2">
               show all events
             </button>.
           </p>

@@ -143,7 +143,7 @@ export default function FeedClient({ initialPosts, currentUserId }: Props) {
               style={{
                 background: 'rgba(255,255,255,0.03)',
                 border: '1px solid rgba(255,255,255,0.07)',
-                color: '#8A8F98',
+                color: '#8C8680',
               }}
             >
               What&apos;s on your mind about cars?
@@ -163,7 +163,7 @@ export default function FeedClient({ initialPosts, currentUserId }: Props) {
               <div className="flex items-center justify-between gap-2">
                 <span
                   className="text-xs font-mono"
-                  style={{ color: content.length > MAX_LENGTH * 0.9 ? '#f87171' : '#8A8F98' }}
+                  style={{ color: content.length > MAX_LENGTH * 0.9 ? '#f87171' : '#8C8680' }}
                 >
                   {content.length}/{MAX_LENGTH}
                 </span>
@@ -172,9 +172,9 @@ export default function FeedClient({ initialPosts, currentUserId }: Props) {
                   onClick={() => setIsPoll(p => !p)}
                   className="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg transition-all"
                   style={{
-                    background: isPoll ? 'rgba(94,106,210,0.15)' : 'rgba(255,255,255,0.04)',
-                    color: isPoll ? '#818cf8' : '#8A8F98',
-                    border: isPoll ? '1px solid rgba(94,106,210,0.30)' : '1px solid rgba(255,255,255,0.07)',
+                    background: isPoll ? 'rgba(249,115,22,0.15)' : 'rgba(255,255,255,0.04)',
+                    color: isPoll ? '#FB923C' : '#8C8680',
+                    border: isPoll ? '1px solid rgba(249,115,22,0.30)' : '1px solid rgba(255,255,255,0.07)',
                   }}
                 >
                   <BarChart2 className="w-3.5 h-3.5" />
@@ -198,7 +198,7 @@ export default function FeedClient({ initialPosts, currentUserId }: Props) {
                         <button
                           type="button"
                           onClick={() => setOptions(prev => prev.filter((_, idx) => idx !== i))}
-                          className="text-[#8A8F98] hover:text-[#f87171] transition-colors p-1"
+                          className="text-[#8C8680] hover:text-[#f87171] transition-colors p-1"
                         >
                           <X className="w-4 h-4" />
                         </button>
@@ -209,7 +209,7 @@ export default function FeedClient({ initialPosts, currentUserId }: Props) {
                     <button
                       type="button"
                       onClick={() => setOptions(prev => [...prev, ''])}
-                      className="text-xs text-[#5E6AD2] hover:text-[#818cf8] transition-colors flex items-center gap-1 mt-0.5 ml-1"
+                      className="text-xs text-[#F97316] hover:text-[#FB923C] transition-colors flex items-center gap-1 mt-0.5 ml-1"
                     >
                       <PlusCircle className="w-3.5 h-3.5" />
                       Add option
@@ -259,9 +259,9 @@ export default function FeedClient({ initialPosts, currentUserId }: Props) {
               onClick={() => setSortBy(opt.value)}
               className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-lg transition-all duration-200"
               style={{
-                background: sortBy === opt.value ? 'rgba(94,106,210,0.15)' : 'rgba(255,255,255,0.04)',
-                color:      sortBy === opt.value ? '#818cf8' : '#8A8F98',
-                border:     sortBy === opt.value ? '1px solid rgba(94,106,210,0.30)' : '1px solid rgba(255,255,255,0.07)',
+                background: sortBy === opt.value ? 'rgba(249,115,22,0.15)' : 'rgba(255,255,255,0.04)',
+                color:      sortBy === opt.value ? '#FB923C' : '#8C8680',
+                border:     sortBy === opt.value ? '1px solid rgba(249,115,22,0.30)' : '1px solid rgba(255,255,255,0.07)',
               }}
             >
               {opt.icon}
@@ -276,12 +276,12 @@ export default function FeedClient({ initialPosts, currentUserId }: Props) {
         <div className="flex flex-col items-center text-center py-24">
           <div
             className="w-16 h-16 rounded-2xl flex items-center justify-center mb-5"
-            style={{ background: 'rgba(94,106,210,0.08)', border: '1px solid rgba(94,106,210,0.15)' }}
+            style={{ background: 'rgba(249,115,22,0.08)', border: '1px solid rgba(249,115,22,0.15)' }}
           >
-            <MessageCircle className="w-7 h-7 text-[#5E6AD2]" />
+            <MessageCircle className="w-7 h-7 text-[#F97316]" />
           </div>
-          <p className="text-lg font-semibold text-[#EDEDEF] mb-2">No posts yet</p>
-          <p className="text-sm" style={{ color: '#8A8F98' }}>
+          <p className="text-lg font-semibold text-[#F5F0EB] mb-2">No posts yet</p>
+          <p className="text-sm" style={{ color: '#8C8680' }}>
             {currentUserId ? 'Start the conversation above.' : 'Sign in to be the first to post.'}
           </p>
         </div>

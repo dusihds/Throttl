@@ -21,9 +21,9 @@ export default function Avatar({ username, avatarUrl, size = 'md', isDev = false
         width: px,
         height: px,
         borderRadius: radius,
-        background: 'rgba(94,106,210,0.12)',
-        border: isDev ? '1px solid rgba(94,106,210,0.45)' : '1px solid rgba(94,106,210,0.25)',
-        color: '#818cf8',
+        background: 'rgba(249,115,22,0.12)',
+        border: isDev ? '1px solid rgba(249,115,22,0.45)' : '1px solid rgba(249,115,22,0.25)',
+        color: '#FB923C',
         fontSize,
       }}
     >

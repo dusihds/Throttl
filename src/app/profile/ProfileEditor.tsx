@@ -60,7 +60,7 @@ export default function ProfileEditor({ userId, avatarUrl: initAvatar, bio: init
       >
         <div
           className="w-full h-full rounded-2xl overflow-hidden flex items-center justify-center text-2xl font-black"
-          style={{ background: 'rgba(94,106,210,0.12)', border: '1px solid rgba(94,106,210,0.25)', color: '#818cf8', position: 'relative' }}
+          style={{ background: 'rgba(249,115,22,0.12)', border: '1px solid rgba(249,115,22,0.25)', color: '#FB923C', position: 'relative' }}
         >
           {avatar ? (
             <Image src={avatar} alt={username} fill sizes="72px" className="object-cover" unoptimized={avatar.includes('?t=')} />
@@ -92,15 +92,15 @@ export default function ProfileEditor({ userId, avatarUrl: initAvatar, bio: init
           style={{ padding: '8px 12px' }}
         />
         <div className="flex items-center justify-between">
-          <span className="text-[11px] font-mono" style={{ color: '#8A8F98' }}>{bio.length}/160</span>
+          <span className="text-[11px] font-mono" style={{ color: '#8C8680' }}>{bio.length}/160</span>
           <button
             onClick={saveBio}
             disabled={savingBio || !bioChanged}
             className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-lg transition-all"
             style={{
-              background: saved ? 'rgba(34,197,94,0.12)' : 'rgba(94,106,210,0.12)',
-              color:      saved ? '#4ade80' : '#818cf8',
-              border:     `1px solid ${saved ? 'rgba(34,197,94,0.25)' : 'rgba(94,106,210,0.25)'}`,
+              background: saved ? 'rgba(34,197,94,0.12)' : 'rgba(249,115,22,0.12)',
+              color:      saved ? '#4ade80' : '#FB923C',
+              border:     `1px solid ${saved ? 'rgba(34,197,94,0.25)' : 'rgba(249,115,22,0.25)'}`,
               opacity:    !bioChanged && !saved ? 0.45 : 1,
               cursor:     !bioChanged ? 'default' : 'pointer',
             }}

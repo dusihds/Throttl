@@ -73,17 +73,17 @@ export default function NewsClient({ articles }: { articles: NewsItem[] }) {
             onClick={() => setFilter(opt.value)}
             className="flex items-center gap-1.5 text-sm font-medium px-4 py-2 rounded-xl transition-all duration-200"
             style={{
-              background: filter === opt.value ? 'rgba(94,106,210,0.15)' : 'rgba(255,255,255,0.04)',
-              color:      filter === opt.value ? '#818cf8' : '#8A8F98',
-              border:     filter === opt.value ? '1px solid rgba(94,106,210,0.30)' : '1px solid rgba(255,255,255,0.07)',
+              background: filter === opt.value ? 'rgba(249,115,22,0.15)' : 'rgba(255,255,255,0.04)',
+              color:      filter === opt.value ? '#FB923C' : '#8C8680',
+              border:     filter === opt.value ? '1px solid rgba(249,115,22,0.30)' : '1px solid rgba(255,255,255,0.07)',
             }}
           >
             {opt.label}
             <span
               className="text-xs font-mono px-1.5 py-0.5 rounded-full"
               style={{
-                background: filter === opt.value ? 'rgba(94,106,210,0.20)' : 'rgba(255,255,255,0.06)',
-                color:      filter === opt.value ? '#818cf8' : '#8A8F98',
+                background: filter === opt.value ? 'rgba(249,115,22,0.20)' : 'rgba(255,255,255,0.06)',
+                color:      filter === opt.value ? '#FB923C' : '#8C8680',
               }}
             >
               {counts[opt.value]}
@@ -94,7 +94,7 @@ export default function NewsClient({ articles }: { articles: NewsItem[] }) {
 
       {/* ── Subcategory chips ────────────────────────────── */}
       <div className="flex items-center gap-2 mb-2 flex-wrap">
-        <span className="text-[10px] font-mono uppercase tracking-widest" style={{ color: '#8A8F98' }}>Filter:</span>
+        <span className="text-[10px] font-mono uppercase tracking-widest" style={{ color: '#8C8680' }}>Filter:</span>
         {ALL_CATEGORIES.map(cat => {
           const meta = CATEGORY_META[cat]
           const active = filter === cat
@@ -107,7 +107,7 @@ export default function NewsClient({ articles }: { articles: NewsItem[] }) {
                 className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-l-lg transition-all duration-200"
                 style={{
                   background:   active ? meta.color.bg : 'rgba(255,255,255,0.04)',
-                  color:        active ? meta.color.text : '#8A8F98',
+                  color:        active ? meta.color.text : '#8C8680',
                   borderTop:    `1px solid ${active ? meta.color.border : 'rgba(255,255,255,0.07)'}`,
                   borderBottom: `1px solid ${active ? meta.color.border : 'rgba(255,255,255,0.07)'}`,
                   borderLeft:   `1px solid ${active ? meta.color.border : 'rgba(255,255,255,0.07)'}`,
@@ -123,7 +123,7 @@ export default function NewsClient({ articles }: { articles: NewsItem[] }) {
                 className="flex items-center justify-center px-2 py-1.5 rounded-r-lg transition-all duration-200"
                 style={{
                   background: isFav ? 'rgba(250,204,21,0.15)' : 'rgba(255,255,255,0.04)',
-                  color:      isFav ? '#facc15' : '#8A8F98',
+                  color:      isFav ? '#facc15' : '#8C8680',
                   border:     `1px solid ${isFav ? 'rgba(250,204,21,0.30)' : 'rgba(255,255,255,0.07)'}`,
                 }}
               >
@@ -145,12 +145,12 @@ export default function NewsClient({ articles }: { articles: NewsItem[] }) {
         <div className="flex flex-col items-center text-center py-24">
           <div
             className="w-16 h-16 rounded-2xl flex items-center justify-center mb-5"
-            style={{ background: 'rgba(94,106,210,0.08)', border: '1px solid rgba(94,106,210,0.15)' }}
+            style={{ background: 'rgba(249,115,22,0.08)', border: '1px solid rgba(249,115,22,0.15)' }}
           >
-            <Newspaper className="w-7 h-7 text-[#5E6AD2]" />
+            <Newspaper className="w-7 h-7 text-[#F97316]" />
           </div>
-          <p className="text-lg font-semibold text-[#EDEDEF] mb-2">No articles right now</p>
-          <p className="text-sm" style={{ color: '#8A8F98' }}>Feeds refresh every 30 minutes.</p>
+          <p className="text-lg font-semibold text-[#F5F0EB] mb-2">No articles right now</p>
+          <p className="text-sm" style={{ color: '#8C8680' }}>Feeds refresh every 30 minutes.</p>
         </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -219,13 +219,13 @@ function NewsCard({ article, isFav }: { article: NewsItem; isFav: boolean }) {
       <div className="flex flex-col flex-1 p-4">
         <div className="flex items-center justify-between gap-2 mb-2">
           <span className="text-[11px] font-mono font-medium" style={{ color: meta.color.text }}>{article.source}</span>
-          {timeAgo && <span className="text-[11px] font-mono shrink-0" style={{ color: '#8A8F98' }}>{timeAgo}</span>}
+          {timeAgo && <span className="text-[11px] font-mono shrink-0" style={{ color: '#8C8680' }}>{timeAgo}</span>}
         </div>
-        <h3 className="text-sm font-semibold text-[#EDEDEF] leading-snug mb-2 line-clamp-3 group-hover:text-white transition-colors">
+        <h3 className="text-sm font-semibold text-[#F5F0EB] leading-snug mb-2 line-clamp-3 group-hover:text-white transition-colors">
           {article.title}
         </h3>
         {article.description && (
-          <p className="text-xs leading-relaxed line-clamp-2 mb-3" style={{ color: '#8A8F98' }}>
+          <p className="text-xs leading-relaxed line-clamp-2 mb-3" style={{ color: '#8C8680' }}>
             {article.description}
           </p>
         )}

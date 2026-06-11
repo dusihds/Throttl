@@ -18,8 +18,8 @@ export default async function SpotsPage() {
     <div className="max-w-6xl mx-auto px-4 py-10">
       <div className="flex items-end justify-between mb-10">
         <div>
-          <p className="text-[11px] font-mono text-[#5E6AD2] uppercase tracking-widest mb-2">Community sightings</p>
-          <h1 className="text-3xl font-bold text-[#EDEDEF] tracking-tight">Car Spots</h1>
+          <p className="text-[11px] font-mono text-[#F97316] uppercase tracking-widest mb-2">Community sightings</p>
+          <h1 className="text-3xl font-bold text-[#F5F0EB] tracking-tight">Car Spots</h1>
         </div>
         <Link href="/spots/new" className="btn-primary text-sm py-2.5 px-5">
           <PlusCircle className="w-4 h-4" />
@@ -37,12 +37,12 @@ export default async function SpotsPage() {
         <div className="flex flex-col items-center text-center py-24">
           <div
             className="w-16 h-16 rounded-2xl flex items-center justify-center mb-5"
-            style={{ background: 'rgba(94,106,210,0.08)', border: '1px solid rgba(94,106,210,0.15)' }}
+            style={{ background: 'rgba(249,115,22,0.08)', border: '1px solid rgba(249,115,22,0.15)' }}
           >
-            <Search className="w-7 h-7 text-[#5E6AD2]" />
+            <Search className="w-7 h-7 text-[#F97316]" />
           </div>
-          <p className="text-lg font-semibold text-[#EDEDEF] mb-2">No spots logged yet</p>
-          <p className="text-sm mb-8" style={{ color: '#8A8F98' }}>Spotted something cool? Be the first to log it!</p>
+          <p className="text-lg font-semibold text-[#F5F0EB] mb-2">No spots logged yet</p>
+          <p className="text-sm mb-8" style={{ color: '#8C8680' }}>Spotted something cool? Be the first to log it!</p>
           <Link href="/spots/new" className="btn-primary px-7 py-3">
             <PlusCircle className="w-4 h-4" />
             Log First Spot

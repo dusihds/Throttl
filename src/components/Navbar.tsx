@@ -53,10 +53,10 @@ export default function Navbar() {
       >
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 font-bold text-lg mr-2 shrink-0">
-          <span className="text-[#5E6AD2]">
+          <span className="text-[#F97316]">
             <Car className="w-5 h-5" />
           </span>
-          <span className="text-[#EDEDEF] tracking-tight">Throttl</span>
+          <span className="text-[#F5F0EB] tracking-tight">Throttl</span>
         </Link>
 
         {/* Nav links */}
@@ -69,15 +69,15 @@ export default function Navbar() {
                 href={href}
                 className="px-3.5 py-1.5 rounded-lg text-sm font-medium transition-all duration-200"
                 style={{
-                  background: active ? 'rgba(94,106,210,0.15)' : 'transparent',
-                  color: active ? '#5E6AD2' : '#8A8F98',
-                  border: active ? '1px solid rgba(94,106,210,0.25)' : '1px solid transparent',
+                  background: active ? 'rgba(249,115,22,0.15)' : 'transparent',
+                  color: active ? '#F97316' : '#8C8680',
+                  border: active ? '1px solid rgba(249,115,22,0.25)' : '1px solid transparent',
                 }}
                 onMouseEnter={e => {
-                  if (!active) (e.currentTarget as HTMLElement).style.color = '#EDEDEF'
+                  if (!active) (e.currentTarget as HTMLElement).style.color = '#F5F0EB'
                 }}
                 onMouseLeave={e => {
-                  if (!active) (e.currentTarget as HTMLElement).style.color = '#8A8F98'
+                  if (!active) (e.currentTarget as HTMLElement).style.color = '#8C8680'
                 }}
               >
                 {label}
@@ -96,7 +96,7 @@ export default function Navbar() {
               </Link>
               <button
                 onClick={signOut}
-                className="text-sm text-[#8A8F98] hover:text-[#EDEDEF] transition-colors px-3 py-1.5 rounded-lg hover:bg-white/[0.05]"
+                className="text-sm text-[#8C8680] hover:text-[#F5F0EB] transition-colors px-3 py-1.5 rounded-lg hover:bg-white/[0.05]"
               >
                 Sign out
               </button>
@@ -120,12 +120,12 @@ export default function Navbar() {
         }}
       >
         <Link href="/" className="flex items-center gap-2 font-bold text-base">
-          <Car className="w-4 h-4 text-[#5E6AD2]" />
-          <span className="text-[#EDEDEF]">Throttl</span>
+          <Car className="w-4 h-4 text-[#F97316]" />
+          <span className="text-[#F5F0EB]">Throttl</span>
         </Link>
         <button
           onClick={() => setMenuOpen(o => !o)}
-          className="p-2 rounded-lg text-[#8A8F98] hover:text-[#EDEDEF] hover:bg-white/[0.06] transition-all"
+          className="p-2 rounded-lg text-[#8C8680] hover:text-[#F5F0EB] hover:bg-white/[0.06] transition-all"
           aria-label="Toggle menu"
         >
           {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -151,9 +151,9 @@ export default function Navbar() {
                 href={href}
                 className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200"
                 style={{
-                  background: active ? 'rgba(94,106,210,0.12)' : 'transparent',
-                  color: active ? '#5E6AD2' : '#8A8F98',
-                  border: active ? '1px solid rgba(94,106,210,0.2)' : '1px solid transparent',
+                  background: active ? 'rgba(249,115,22,0.12)' : 'transparent',
+                  color: active ? '#F97316' : '#8C8680',
+                  border: active ? '1px solid rgba(249,115,22,0.2)' : '1px solid transparent',
                 }}
               >
                 <Icon className="w-4 h-4" />
@@ -165,7 +165,7 @@ export default function Navbar() {
             {user ? (
               <button
                 onClick={signOut}
-                className="w-full text-center text-sm text-[#8A8F98] hover:text-[#EDEDEF] py-2.5 transition-colors"
+                className="w-full text-center text-sm text-[#8C8680] hover:text-[#F5F0EB] py-2.5 transition-colors"
               >
                 Sign out
               </button>
@@ -195,7 +195,7 @@ export default function Navbar() {
               key={href}
               href={href}
               className="flex-1 flex flex-col items-center gap-1 py-3 text-[10px] font-medium tracking-wide transition-colors duration-200"
-              style={{ color: active ? '#5E6AD2' : '#8A8F98' }}
+              style={{ color: active ? '#F97316' : '#8C8680' }}
             >
               <Icon className="w-5 h-5" />
               {label}
