@@ -4,6 +4,7 @@ import { useRef, useEffect, useState } from 'react'
 import { motion, useScroll, useTransform, animate } from 'framer-motion'
 import Link from 'next/link'
 import { Car, Calendar, Zap } from 'lucide-react'
+import OnlineCounter from './OnlineCounter'
 
 interface Props {
   spotCount: number
@@ -107,19 +108,22 @@ export default function ScrollHero({ spotCount, eventCount, hasContent }: Props)
           </Link>
         </motion.div>
 
-        {/* Stats with animated counters */}
-        {hasContent && (
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.38 }}
-            className="flex items-center gap-12 mt-12"
-          >
-            <StatCounter label="Spots logged"    value={spotCount} />
-            <div style={{ width: 1, height: 32, background: 'rgba(255,255,255,0.08)' }} />
-            <StatCounter label="Events upcoming" value={eventCount} />
-          </motion.div>
-        )}
+        {/* Stats + online counter */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.38 }}
+          className="flex flex-col items-center gap-4 mt-12"
+        >
+          {hasContent && (
+            <div className="flex items-center gap-12">
+              <StatCounter label="Spots logged"    value={spotCount} />
+              <div style={{ width: 1, height: 32, background: 'rgba(255,255,255,0.08)' }} />
+              <StatCounter label="Events upcoming" value={eventCount} />
+            </div>
+          )}
+          <OnlineCounter />
+        </motion.div>
       </motion.div>
     </section>
   )
