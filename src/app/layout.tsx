@@ -26,9 +26,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="blob-1 absolute -top-[30%] left-1/2 -translate-x-1/2 w-[900px] h-[700px] rounded-full"
             style={{ background: 'rgba(249,115,22,0.22)', filter: 'blur(150px)' }} />
           <div className="blob-2 absolute top-[25%] -left-[15%] w-[600px] h-[500px] rounded-full"
-            style={{ background: 'rgba(120,80,210,0.14)', filter: 'blur(120px)' }} />
+            style={{ background: 'rgba(249,115,22,0.07)', filter: 'blur(120px)' }} />
           <div className="blob-3 absolute top-[15%] -right-[10%] w-[500px] h-[450px] rounded-full"
-            style={{ background: 'rgba(70,90,200,0.11)', filter: 'blur(110px)' }} />
+            style={{ background: 'rgba(251,146,60,0.05)', filter: 'blur(110px)' }} />
           <div className="blob-4 absolute bottom-[5%] left-1/2 -translate-x-1/2 w-[700px] h-[300px] rounded-full"
             style={{ background: 'rgba(249,115,22,0.10)', filter: 'blur(100px)' }} />
           <div className="absolute inset-0 opacity-[0.018]"

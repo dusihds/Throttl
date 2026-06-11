@@ -1,8 +1,9 @@
 import Link from 'next/link'
-import { Car, Calendar, ArrowRight, MapPin, Zap } from 'lucide-react'
+import { Car, Calendar, ArrowRight } from 'lucide-react'
 import { createClient } from '@/lib/supabase/server'
 import SpotCard from '@/components/SpotCard'
 import EventCard from '@/components/EventCard'
+import ScrollHero from '@/components/ScrollHero'
 import type { CarSpot, CarEvent } from '@/lib/types'
 
 export const revalidate = 60
@@ -34,64 +35,11 @@ export default async function Home() {
   return (
     <div className="max-w-6xl mx-auto px-4">
 
-      {/* ── Hero ───────────────────────────────────────────────── */}
-      <section className="relative flex flex-col items-center text-center pt-20 pb-24 md:pt-28 md:pb-32">
-
-        {/* Badge */}
-        <div
-          className="inline-flex items-center gap-2 text-xs font-mono font-medium px-4 py-2 rounded-full mb-8 tracking-widest uppercase"
-          style={{
-            background: 'rgba(249,115,22,0.10)',
-            color: '#FB923C',
-            border: '1px solid rgba(249,115,22,0.22)',
-          }}
-        >
-          <Zap className="w-3 h-3" />
-          For car enthusiasts · by car enthusiasts
-        </div>
-
-        {/* Headline */}
-        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-none tracking-[-0.03em] mb-6">
-          <span className="gradient-text block">Spot.</span>
-          <span className="shimmer-text block">Share.</span>
-          <span className="gradient-text block">Celebrate.</span>
-        </h1>
-
-        {/* Subtext */}
-        <p
-          className="text-base sm:text-lg md:text-xl max-w-md mx-auto mb-10 leading-relaxed"
-          style={{ color: '#8C8680' }}
-        >
-          Log every car you spot, track their worth, and find car meetups near you.
-        </p>
-
-        {/* CTAs */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link href="/spots/new" className="btn-primary text-base px-8 py-3.5">
-            <Car className="w-5 h-5" />
-            Log a Spot
-          </Link>
-          <Link href="/events" className="btn-secondary text-base px-8 py-3.5">
-            <Calendar className="w-5 h-5" />
-            Browse Events
-          </Link>
-        </div>
-
-        {/* Stats row */}
-        {hasContent && (
-          <div className="flex items-center gap-8 mt-12">
-            {[
-              { icon: Car,      label: 'Spots logged',    val: spots?.length ?? 0 },
-              { icon: Calendar, label: 'Events upcoming', val: enrichedEvents.length },
-            ].map(({ icon: Icon, label, val }) => (
-              <div key={label} className="flex flex-col items-center gap-1">
-                <span className="text-2xl font-black text-[#F5F0EB] tracking-tight">{val}</span>
-                <span className="text-[11px] font-mono text-[#8C8680] uppercase tracking-widest">{label}</span>
-              </div>
-            ))}
-          </div>
-        )}
-      </section>
+      <ScrollHero
+        spotCount={spots?.length ?? 0}
+        eventCount={enrichedEvents.length}
+        hasContent={hasContent}
+      />
 
       {/* ── Section divider ──────────────────────────────────── */}
       <div className="h-px w-full" style={{ background: 'linear-gradient(90deg,transparent,rgba(255,255,255,0.06),transparent)' }} />
