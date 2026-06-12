@@ -3,6 +3,12 @@ import { PlusCircle, Search } from 'lucide-react'
 import { createClient } from '@/lib/supabase/server'
 import SpotCard from '@/components/SpotCard'
 import type { CarSpot } from '@/lib/types'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Car Spots — Throttl',
+  description: 'Browse the latest car sightings logged by the Throttl community.',
+}
 
 export const revalidate = 60
 

@@ -3,6 +3,12 @@ import { PlusCircle } from 'lucide-react'
 import { createClient } from '@/lib/supabase/server'
 import EventsClient from '@/components/EventsClient'
 import type { CarEvent } from '@/lib/types'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Car Events — Throttl',
+  description: 'Find local car meetups and events near you.',
+}
 
 export const revalidate = 60
 

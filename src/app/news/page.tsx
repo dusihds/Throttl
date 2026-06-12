@@ -1,6 +1,12 @@
 import { Newspaper } from 'lucide-react'
 import { fetchAllNews } from '@/lib/news'
 import NewsClient from './NewsClient'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Car & Motorsport News — Throttl',
+  description: 'Aggregated news from the top automotive and motorsport sources — F1, MotoGP, WRC, NASCAR, and more.',
+}
 
 export const revalidate = 1800
 

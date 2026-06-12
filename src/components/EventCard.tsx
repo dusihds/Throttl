@@ -17,6 +17,45 @@ interface Props {
   isOwner?: boolean
 }
 
+function nextOccurrence(startTime: string, rule: string): Date {
+  const start = new Date(startTime)
+  const now   = new Date()
+  const h = start.getHours()
+  const m = start.getMinutes()
+
+  if (rule.includes('FREQ=DAILY')) {
+    const d = new Date(); d.setHours(h, m, 0, 0)
+    if (d <= now) d.setDate(d.getDate() + 1)
+    return d
+  }
+
+  if (rule.includes('FREQ=WEEKLY')) {
+    const DAY: Record<string, number> = { SU:0, MO:1, TU:2, WE:3, TH:4, FR:5, SA:6 }
+    const byday = rule.match(/BYDAY=([A-Z,]+)/)?.[1]
+    const days = byday
+      ? byday.split(',').map(d => DAY[d] ?? -1).filter(d => d >= 0)
+      : [start.getDay()]
+    let earliest: Date | null = null
+    for (const day of days) {
+      const d = new Date(); d.setHours(h, m, 0, 0)
+      let diff = (day - d.getDay() + 7) % 7
+      if (diff === 0 && d <= now) diff = 7
+      d.setDate(d.getDate() + diff)
+      if (!earliest || d < earliest) earliest = d
+    }
+    return earliest ?? start
+  }
+
+  if (rule.includes('FREQ=MONTHLY')) {
+    const day = start.getDate()
+    const d = new Date(); d.setDate(day); d.setHours(h, m, 0, 0)
+    if (d <= now) { d.setMonth(d.getMonth() + 1); d.setDate(day) }
+    return d
+  }
+
+  return start
+}
+
 function recurrenceLabel(rule: string): string {
   const days: Record<string, string> = {
     MO: 'Mon', TU: 'Tue', WE: 'Wed', TH: 'Thu', FR: 'Fri', SA: 'Sat', SU: 'Sun',
@@ -177,7 +216,14 @@ export default function EventCard({ event, distance, index = 0, isOwner = false 
           <div className="mt-3 flex flex-col gap-1.5">
             <div className="flex items-center gap-2 text-[#8C8680] text-xs">
               <Clock className="w-3 h-3 text-[#F97316] shrink-0" />
-              <span className="text-[#F5F0EB] font-medium">{format(new Date(event.start_time), 'EEE, MMM d · h:mm a')}</span>
+              <span className="text-[#F5F0EB] font-medium">
+                {format(
+                  event.is_recurring && event.recurrence_rule
+                    ? nextOccurrence(event.start_time, event.recurrence_rule)
+                    : new Date(event.start_time),
+                  'EEE, MMM d · h:mm a'
+                )}
+              </span>
             </div>
             <div className="flex items-center gap-2 text-[#8C8680] text-xs">
               <MapPin className="w-3 h-3 text-[#F97316] shrink-0" />

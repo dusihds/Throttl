@@ -82,7 +82,11 @@ export default function NewSpotPage() {
     router.push('/spots')
   }
 
-  if (!authChecked) return null
+  if (!authChecked) return (
+    <div className="min-h-[70vh] flex items-center justify-center">
+      <div className="w-8 h-8 rounded-full border-2 border-[#F97316] border-t-transparent animate-spin" />
+    </div>
+  )
 
   if (!currentUser) return (
     <div className="min-h-[70vh] flex items-center justify-center px-4">

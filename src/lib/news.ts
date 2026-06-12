@@ -66,6 +66,18 @@ const FEEDS: FeedConfig[] = [
   { url: 'https://www.speedcafe.com/feed/',               source: 'Speedcafe',     category: 'motorsport-general' },
 ]
 
+function decodeEntities(s: string): string {
+  return s
+    .replace(/&amp;/g,  '&')
+    .replace(/&lt;/g,   '<')
+    .replace(/&gt;/g,   '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&apos;/g, "'")
+    .replace(/&#0*39;/g, "'")
+    .replace(/&#(\d+);/g,      (_, n) => String.fromCharCode(Number(n)))
+    .replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCharCode(parseInt(h, 16)))
+}
+
 function extract(xml: string, tag: string): string {
   const cdata = new RegExp(`<${tag}[^>]*><!\\[CDATA\\[([\\s\\S]*?)\\]\\]><\\/${tag}>`, 'i')
   const plain = new RegExp(`<${tag}[^>]*>([\\s\\S]*?)<\\/${tag}>`, 'i')
@@ -102,14 +114,17 @@ async function fetchFeed(config: FeedConfig): Promise<NewsItem[]> {
     const xml = await res.text()
     const items = [...xml.matchAll(/<item>([\s\S]*?)<\/item>/g)]
     return items.slice(0, 8).flatMap(([, itemXml]) => {
-      const title = extract(itemXml, 'title')
-      const link  = extract(itemXml, 'link').replace(/^<!\[CDATA\[|\]\]>$/g, '').trim()
-      if (!title || !link) return []
+      const rawTitle = extract(itemXml, 'title')
+      const link     = extract(itemXml, 'link').replace(/^<!\[CDATA\[|\]\]>$/g, '').trim()
+      if (!rawTitle || !link) return []
+      const title       = decodeEntities(rawTitle)
+      const rawDesc     = extract(itemXml, 'description')
+      const description = decodeEntities(rawDesc).replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim().slice(0, 200)
       return [{
         title,
         link,
         pubDate:     extract(itemXml, 'pubDate'),
-        description: extract(itemXml, 'description').replace(/<[^>]+>/g, '').trim().slice(0, 200),
+        description,
         image:       extractImage(itemXml),
         source:      config.source,
         category:    config.category,
@@ -123,11 +138,29 @@ async function fetchFeed(config: FeedConfig): Promise<NewsItem[]> {
 
 export async function fetchAllNews(): Promise<NewsItem[]> {
   const results = await Promise.all(FEEDS.map(fetchFeed))
-  return results
+
+  const SIXTY_DAYS = 60 * 24 * 60 * 60 * 1000
+  const cutoff = Date.now() - SIXTY_DAYS
+
+  const sorted = results
     .flat()
+    .filter(a => {
+      if (!a.pubDate) return true
+      const t = new Date(a.pubDate).getTime()
+      return isNaN(t) || t > cutoff           // drop articles older than 60 days
+    })
     .sort((a, b) => {
       const ta = a.pubDate ? new Date(a.pubDate).getTime() : 0
       const tb = b.pubDate ? new Date(b.pubDate).getTime() : 0
       return tb - ta
     })
+
+  // Deduplicate by normalised title (catches Autosport/Motorsport.com cross-syndication)
+  const seen = new Set<string>()
+  return sorted.filter(a => {
+    const key = a.title.toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 64)
+    if (seen.has(key)) return false
+    seen.add(key)
+    return true
+  })
 }

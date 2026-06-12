@@ -3,6 +3,12 @@ import FeedClient from './FeedClient'
 import type { FeedPost } from '@/lib/types'
 import { MessageCircle } from 'lucide-react'
 import OnlineCounter from '@/components/OnlineCounter'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'The Feed — Throttl',
+  description: 'Community discussions, polls, and car talk from Throttl members.',
+}
 
 export const revalidate = 0
 

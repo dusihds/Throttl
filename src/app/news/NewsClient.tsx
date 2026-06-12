@@ -65,8 +65,8 @@ export default function NewsClient({ articles }: { articles: NewsItem[] }) {
       <div className="flex items-center gap-2 mb-4 flex-wrap">
         {([
           { value: 'all',        label: 'All' },
-          { value: 'cars',       label: '🚗 Cars' },
-          { value: 'motorsport', label: '🏆 Motorsport' },
+          { value: 'cars',       label: 'Cars' },
+          { value: 'motorsport', label: 'Motorsport' },
         ] as { value: Filter; label: string }[]).map(opt => (
           <button
             key={opt.value}
@@ -196,8 +196,14 @@ function NewsCard({ article, isFav }: { article: NewsItem; isFav: boolean }) {
             onError={() => setImgFailed(true)}
           />
         ) : (
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-4xl opacity-20">{meta.emoji}</span>
+          <div
+            className="absolute inset-0 flex flex-col items-center justify-center gap-3"
+            style={{
+              background: `linear-gradient(135deg, ${meta.color.bg} 0%, rgba(6,5,4,0.95) 100%)`,
+            }}
+          >
+            <span className="text-5xl" style={{ filter: 'drop-shadow(0 0 16px rgba(249,115,22,0.35))' }}>{meta.emoji}</span>
+            <span className="text-[10px] font-mono uppercase tracking-[0.18em]" style={{ color: meta.color.text, opacity: 0.7 }}>{article.source}</span>
           </div>
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />

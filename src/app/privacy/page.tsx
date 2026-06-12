@@ -49,7 +49,7 @@ export default function PrivacyPage() {
 
         <Section title="2. What Data We Collect">
           <P>We collect only what is necessary to provide the service:</P>
-          <ul className="mt-3 flex flex-col gap-2 text-sm leading-relaxed" style={{ color: '#8C8680' }}>
+          <ul className="mt-3 flex flex-col gap-3 text-sm leading-relaxed">
             {[
               ['Account data', 'Email address, hashed password, chosen username, and account creation date.'],
               ['Profile data', 'Username, optional avatar URL, and optional bio.'],
@@ -59,9 +59,9 @@ export default function PrivacyPage() {
               ['Photos', 'Images you upload are stored in our cloud storage. Do not upload images that contain private or sensitive information.'],
               ['Location (geolocation)', 'Only used locally in your browser to filter nearby events. Your coordinates are never transmitted to or stored on our servers.'],
             ].map(([term, desc]) => (
-              <li key={term} className="flex gap-3">
-                <span className="text-[#F97316] shrink-0 font-medium" style={{ minWidth: 120 }}>{term}</span>
-                <span>{desc}</span>
+              <li key={term} className="flex flex-col gap-0.5">
+                <span className="text-[#F97316] font-semibold text-xs uppercase tracking-wide">{term}</span>
+                <span style={{ color: '#8C8680' }}>{desc}</span>
               </li>
             ))}
           </ul>

@@ -4,6 +4,12 @@ import { createClient } from '@/lib/supabase/server'
 import Avatar from '@/components/Avatar'
 import StarRating from '@/components/StarRating'
 import SearchInput from './SearchInput'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Search — Throttl',
+  description: 'Search for car spots, events, and profiles on Throttl.',
+}
 
 export const revalidate = 0
 
